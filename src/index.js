@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {
@@ -17,7 +16,7 @@ axios.interceptors.request.use(config=>{
   config.url = "/orange"+config.url
   return config
 })
-axios.interceptors.post.use(({data})=>{
+axios.interceptors.response.use(({data})=>{
   return data;
 })
 

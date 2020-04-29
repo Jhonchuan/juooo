@@ -1,0 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bottom_nav{
+    position: fixed;
+    bottom: 0;
+}

@@ -8,7 +8,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <nav>
+                <nav className={"bottom_nav"}>
                     <NavLink to={'/'}>首页</NavLink>
                     <NavLink to={'/theatre/theatreList'}>剧院</NavLink>
                     <NavLink to={'/eticket/list'}>票夹</NavLink>
@@ -18,14 +18,14 @@ export default class Home extends Component {
             </div>
         )
     }
-    async componentDidMount(){
-        const {data} = await axios.get("/orange/vip/index/getVipHomeSchedular",{
-            params:{
-                city_id:1,
-                version:"6.1.1",
-                referer:2
-            }
-        })
-        console.log(data)
-    }
+    // async componentDidMount(){
+    //     const {data} = await axios.get("/orange/vip/index/getVipHomeSchedular",{
+    //         params:{
+    //             city_id:1,
+    //             version:"6.1.1",
+    //             referer:2
+    //         }
+    //     })
+    //     console.log(data)
+    // }
 }

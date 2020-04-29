@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 import router from "./router/index"
 import SwitchRouter from "./components/common/SwitchRouter"
+import "./App.css"
 function App() {
   return (
     <div className="App">
