@@ -1,0 +1,265 @@
+.ticket-list {
+    background: #f5f5f5;
+    position: relative;
+    height: 100%;
+}
+
+.ticket-list__title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.title {
+    height: 1.17333rem;
+    width: 100%;
+    background-color: white;
+    font-size: 0.48rem;
+    color: #232323;
+    position: relative;
+    border-bottom: 1px solid #ebebeb;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.title__text {
+    position: absolute;
+    text-align: center;
+    height: 1.17333rem;
+    line-height: 1.17333rem;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.title__nav-wrapper {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.title__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-right: 0.2rem;
+}
+
+.title__nav .icon-sangedian {
+    font-size: 0.5rem;
+    font-weight: 700;
+    padding: 0.29333rem 0.2rem 0.29333rem 0.2rem;
+}
+
+
+/* 空票价 */
+
+.ticket-empty {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: #fefefe;
+}
+
+.ticket-empty__img {
+    width: 2.90667rem;
+    height: 2.06667rem;
+    margin-top: 4.92rem;
+}
+
+.ticket-empty__tips {
+    color: #999999;
+    font-size: 0.34667rem;
+    margin-top: 0.58667rem;
+}
+
+.ju-button-Eticket {
+    height: 1.06667rem;
+    display: inline-block;
+    line-height: 2;
+    white-space: nowrap;
+    text-align: center;
+    outline: 0;
+    color: #fff;
+    border: none;
+    font-size: 0.45333rem;
+    padding: 0 0.4rem;
+    cursor: pointer;
+    width: 3.86667rem;
+    -webkit-box-shadow: 0px 0.05333rem 0.12rem 1px rgba(255, 77, 74, 0.3);
+    box-shadow: 0px 0.05333rem 0.12rem 1px rgba(255, 77, 74, 0.3);
+    background: linear-gradient(-50deg, #FF4D4A, #FF9A34);
+    border-radius: 26.66667rem;
+    margin-top: 1.33333rem;
+}
+
+
+/* 有内容的票夹 */
+
+.ticket-list__content {
+    width: 100%;
+    position: absolute;
+    bottom: 1.33333rem;
+    top: 1.63333rem;
+}
+
+.load-more {
+    height: 100%;
+    /* overflow-y: scroll; */
+    -webkit-overflow-scrolling: touch;
+}
+
+ticket-list__list__item[data-v-57798d64] {
+    margin-top: 0.32rem;
+}
+
+.ticket-list-item {
+    background-color: #fefefe;
+    overflow: hidden;
+    position: relative;
+}
+
+.ticket-list-item__schedule {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.ticket-list-item__schedule__left {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 0px;
+    padding-left: 0.4rem;
+}
+
+.ticket-list-item__schedule__left__name {
+    color: #242424;
+    font-size: 0.42667rem;
+    line-height: 0.64rem;
+    margin-top: 0.53333rem;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ticket-list-item__schedule__left__date {
+    margin-top: 0.4rem;
+    font-size: 0.32rem;
+    color: #666666;
+}
+
+.ticket-list-item__schedule__left__place {
+    margin-top: 0.10667rem;
+    font-size: 0.32rem;
+    color: #666666;
+    margin-bottom: 0.70667rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ticket-list-item__schedule__right__cover {
+    width: 1.6rem;
+    height: 2.16rem;
+    border-radius: 0.10667rem;
+    margin-top: 1.41333rem;
+    margin-right: 0.4rem;
+    margin-left: 1.42667rem;
+}
+
+.ticket-list-item__divider {
+    height: 1px;
+    background: #ebebeb;
+    margin: 0px 0.4rem 0px 0.4rem;
+}
+
+.ticket-list-item__ticket {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 1.4rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.ticket-list-item__ticket__price {
+    color: #242424;
+    font-size: 0.42667rem;
+    padding-left: 0.4rem;
+    padding-right: 0.26667rem;
+}
+
+.ticket-list-item__ticket__divider {
+    color: #666666;
+    font-size: 0.32rem;
+}
+
+.ticket-list-item__ticket__count {
+    padding-left: 0.26667rem;
+    size: 0.34667rem;
+    color: #666666;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.ticket-list-item__ticket__entry {
+    color: #ff6743;
+    border: 1px solid #ff6743;
+    size: 0.32rem;
+    height: 0.72rem;
+    line-height: 0.72rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 2rem;
+    text-align: center;
+    border-radius: 0.08rem;
+    margin-right: 0.4rem;
+}
+
+.ticket-list-item__status {
+    position: absolute;
+    right: 0.42667rem;
+    top: 0.58667rem;
+    color: #242424;
+    font-size: 0.37333rem;
+}
+
+.load-more__tips {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    font-size: 0.29333rem;
+    height: 1.17333rem;
+    color: #999999;
+}
