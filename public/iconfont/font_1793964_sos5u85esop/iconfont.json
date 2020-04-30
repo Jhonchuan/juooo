@@ -1,0 +1,23 @@
+{
+  "id": "1793964",
+  "name": "juooo",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2710992",
+      "name": "三个点",
+      "font_class": "sangedian",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "13647834",
+      "name": "右箭头",
+      "font_class": "left",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}
