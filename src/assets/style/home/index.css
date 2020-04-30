@@ -8,6 +8,9 @@
     padding: 0 30px;
     display: flex;
     align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 .index_header .header_address{
     width: 116px;
@@ -64,4 +67,160 @@
     vertical-align: middle;
     width: 100%;
     height: 100%;
+}
+/********主体部分**********/
+.index_main{
+    height: 100%;
+    width: 100%;
+}
+.index_main .index_main_section{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 1.30667rem;
+    overflow-y: auto;
+}
+.index_main_section .index_head_banner{
+    padding: 1.37333rem 0.4rem 0
+}
+.index_head_banner .bannerContainer{
+    height: 3.73333rem;
+    width: 100%;
+    border-radius: 0.16rem;
+    border: 1px solid #EBEBEB;
+    overflow: hidden;
+}
+.index_head_banner .bannerContainer img{
+    border: none;
+    border-color: transparent;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.index_main_section .index_advertion{
+    padding: 0.4rem 0.4rem 0;
+    margin-bottom: 0.29333rem;
+}
+.index_advertion .index_labelItem{
+    display: flex;
+    margin-bottom: 0.4rem;
+    flex-wrap: wrap;
+}
+.index_advertion .index_labelItem .item{
+    width: 20%;
+    margin-bottom: 0.29333rem;
+}
+.label-item__block__column{
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.label-item__block__column__icon{
+    width: 1.06667rem;
+    height: 1.06667rem;
+}
+.label-item__block__column__title{
+    font-size: 0.34667rem;
+    color: #666;
+    margin-top: 0.21333rem;
+}
+/************广告轮播***************/
+.vip_ahead{
+    width: 100%;
+    border-radius: 0.08rem;
+    background-color: #fffcf5;
+    margin-bottom: 0.8rem;
+    border: 1px solid rgba(213,163,112,0.5);
+}
+.vip_header_title{
+    width: 100%;
+    height: 1.06667rem;
+    padding: 0 0.4rem;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.vip-ahead__advert__left{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: #6b4218;
+}
+.vip-ahead__advert__left img{
+    width: 0.53333rem;
+    height: 0.48rem;
+    margin-right: 0.13333rem;
+}
+.vip-ahead__advert__left span{
+    font-size: 0.32rem;
+}
+.vip-ahead__advert__right{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: #6b4218;
+}
+.vip_ahead_swiper{
+    padding: 0 0.4rem 0px;
+    height: 2.85333rem;
+}
+.vip_ahead_swiper .swiper-container{
+    width: 100%;
+    padding-top: 0.4rem;
+    border-top: 1px solid #f7eada;
+    padding-bottom: 1.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.vip_ahead_swiper .swiper-container .swiper-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform, -webkit-transform;
+}
+.vip_ahead_swiper .swiper-container .swiper-wrapper .swiper-slide-duplicate{
+    height: 100%;
+    position: relative;
+    transition-property: transform, -webkit-transform;
+}
+.vip-ahead__list{
+    display: flex;
+    position: relative;
+}
+.vip-ahead__list__item{
+    width: 1.46667rem;
+    height: 2rem;
+    border-radius: 0.08rem;
+    overflow: hidden;
+}
+.vip-ahead__list__item a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.vip-ahead__list__item a img{
+    border: none;
+    border-color: transparent;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.vip-ahead__list__info{
+    margin-left: 0.4rem;
+    -webkit-box-flex: 1;
+    flex: 1;
 }
