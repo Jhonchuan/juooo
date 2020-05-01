@@ -7,10 +7,30 @@ export default class Home extends Component {
     return (
       <div>
         <nav className={"bottom_nav"}>
-          <NavLink to={"/"}>首页</NavLink>
-          <NavLink to={"/theatre/theatreList"}>剧院</NavLink>
-          <NavLink to={"/eticket/list"}>票夹</NavLink>
-          <NavLink to={"/myjuooo/myjuooo"}>我的</NavLink>
+          <div className="tabs-block__nav__item">
+            <div className="tabs-block__nav__item__link">
+              <span className="tabs-block__nav__item__link--icon ticket--icon"></span>
+              <NavLink className="link-route" to={"/"}>首页</NavLink>
+            </div>
+          </div>
+          <div className="tabs-block__nav__item">
+            <div className="tabs-block__nav__item__link">
+              <span className="tabs-block__nav__item__link--icon ticket--icon"></span>
+              <NavLink className="link-route" to={"/theatre/theatreList"}>剧院</NavLink>
+            </div>
+          </div>
+          <div className="tabs-block__nav__item">
+            <div className="tabs-block__nav__item__link">
+              <span className="tabs-block__nav__item__link--icon ticket--icon"></span>
+              <NavLink className="link-route" to={"/eticket/list"}>票夹</NavLink>
+            </div>
+          </div>
+          <div className="tabs-block__nav__item">
+            <div className="tabs-block__nav__item__link">
+              <span className="tabs-block__nav__item__link--icon ticket--icon"></span>
+              <NavLink className="link-route" to={"/myjuooo/myjuooo"}>我的</NavLink>
+            </div>
+          </div>
         </nav>
         <SwitchRouter router={this.props.childrens}></SwitchRouter>
       </div>
