@@ -1,0 +1,12 @@
+具体使用在./src/components/common/text.jsx
+源码在./src/components/common/Dialog.jsx
+路由：http://localhost:3000/test
+可配置属性：
+ type：弹出框类型（默认确认框）
+ closeFuction：弹出框点击确认时执行函数
+ 引入组件写的内容：弹出框提示内容
+使用方法：
+（1）引入Dialog组件
+（2）必填项：配置组件属性handleClick={() => this.setState({ isDialog: false })}
+               isDialog：判断组件是否出现的条件
+（3）配置组件其他属性
