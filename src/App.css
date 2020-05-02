@@ -4,12 +4,52 @@
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-
-.bottom_nav {
-    position: fixed;
-    bottom: 0;
+html,body{
+    min-width:750px;
 }
-
+/*底部导航*/
+.bottom_nav {
+    width: 100%;
+    height: 1.30667rem;
+    background-color: #fefefe;
+    box-shadow: 0px 0px 0.06667rem #ebebeb;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 201;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.tabs-block__nav__item{
+    -webkit-box-flex: 1;
+    flex: 1;
+    height: 100%;
+}
+.tabs-block__nav__item__link{
+    display: block;
+    text-align: center;
+    font-size: 0.26667rem;
+    color: #232323;
+}
+.tabs-block__nav__item__link--icon{
+    display: block;
+    margin: 0 auto;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ticket--icon{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAS1BMVEUAAAA4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTU4NTV6K33hAAAAGHRSTlMAsEFw3PLRhDNmCa0UxfDGuo1iUEwvIG1UI89BAAAA5ElEQVRIx+3V626EIBCG4ZGiLKh7cE/v/V9p27Qp22bG2EyadBOefyJfMAIz0jRN89Nu7KniJNXMh37c6dmF7x6mTVSLui4QuyrJg/vnYAS0tUeo800JRmV4T5QNIntlFLot4Q7+NlzS/XfhWaoM+o7OaniAIX89vUBQJuX3Wcr4BeAwrYWnA8BFFOEIDMUOlwE4BtFdIyQ7nCBexXTr6YsVLm8vb7LiBMEKBzjJmjNkK5zh7Av7Ptv5w3xb5TokruPpuhiOK+ksBv+qhjlKr6/o13Zjs9uNLGyy2C3WVFts0zyFV7hJH05/U1+QAAAAAElFTkSuQmCC");
+}
+.link-route{
+    text-decoration: none;
+    color:#232323;
+}
 
 /* 共有样式 */
 
@@ -120,7 +160,6 @@ textarea {
     font: inherit;
     color: inherit;
 }
-
 
 /* icon图标 */
 

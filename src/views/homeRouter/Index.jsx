@@ -97,7 +97,7 @@ export default class Index extends Component {
                                         </div>
                                         <div className="vip-ahead__advert__right">
                                             <span className="vip-ahead__advert__right__lab">99元/年</span>
-                                            <span className="vip-ahead__advert__right__icon">></span>
+                                            <span className="vip-ahead__advert__right__icon"></span>
                                         </div>
                                     </div>
                                 </a>
@@ -107,18 +107,95 @@ export default class Index extends Component {
                                             <div className="swiper-slide-duplicate">
                                                 <div className="vip-ahead__list">
                                                     <div className="vip-ahead__list__item">
-                                                        <a href=""><img src="https://image.juooo.com/group1/M00/04/3C/rAoKNV5wbveAJgk0AABW2kJicvo624.jpg" alt=""/></a>
+                                                        <a href=""><img src="https://image.juooo.com/group1/M00/04/3C/rAoKNV5wbveAJgk0AABW2kJicvo624.jpg" alt="" /></a>
                                                     </div>
-                                                    <div className="vip-ahead__list__info"></div>
-                                                    <a href="/ticket/114166"></a>
+                                                    <div className="vip-ahead__list__info">
+                                                        <a href="/ticket/114166"><h3 className="vip-ahead__list__info__title text-double">【小橙堡】大型3D多媒体亲子科幻剧《恐龙工厂的奇妙夜》</h3></a>
+                                                        <p className="vip-ahead__list__info__tip item-discount">
+                                                            <span className="item-discount__num c_ff6">7</span>
+                                                            <span className="vip-ahead__list__info__tip__text">折起</span>
+                                                        </p>
+                                                    </div>
+                                                    <a href="/ticket/114166">
+                                                        <span className="vip-ahead__list__lab">立即抢购</span>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className="vip-pagination">
+                                            <span className="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                                            <span className="swiper-pagination-bullet"></span>
+                                            <span className="swiper-pagination-bullet"></span>
+                                        </div>
                                     </div>
-                                    <div className="vip-pagination"></div>
                                 </div>
                             </section>
+                            <div className="index_advertise">
+                                <a className="advertion__block" href=""><img src="https://image.juooo.com/group1/M00/03/96/rAoKmV6W4RyAdkouAAJa2-GtD74165.png" alt="" /></a>
+                            </div>
                         </section>
+                        <div className="index-model-block">
+                            <h3 className="model-block__title">为你推荐</h3>
+                            <div className="index-show-model">
+                                <div className="index-show-model__main">
+                                    <div className="index-show-model__item">
+                                        <div className="index-falls-cell">
+                                            <div className="index-falls-cell__image">
+                                                <img src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg" alt="" />
+                                            </div>
+                                            <div className="falls-cell__info">
+                                                <div className="falls-cell__info__title">
+                                                    <div className="falls-cell__info__title__sponsor"><img src="https://image.juooo.com/upload/i.png" alt="" /></div>
+                                                    <h3 className="falls-cell__info__title__cell">【演出延期】聚橙出品 |百老汇现象级原版音乐剧《来自远方》-深圳站</h3>
+                                                </div>
+                                                <div className="falls-cell__info__date">
+                                                    <span>2020.06.12 - 06.14</span>
+                                                </div>
+                                                <p className="falls-cell__info__price">
+                                                    <span className="falls-cell__info__price--price">￥280 </span>
+                                                    <span className="falls-cell__info__price__tip">起</span>
+                                                </p>
+                                                <p className="falls-cell__info__support">
+                                                    <span className="falls-cell__info__support--label">电子票</span>
+                                                    <span className="falls-cell__info__support--label">可选座</span>
+                                                    <span className="falls-cell__info__support--label">限时8折起</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* 22222222222 */}
+                                    <div style={{
+                                        left: 175,
+                                        top: "0.066667rem",
+                                        opacity: 1
+                                    }} className="index-show-model__item">
+                                        <div className="index-falls-cell">
+                                            <div className="index-falls-cell__image">
+                                                <img src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg" alt="" />
+                                            </div>
+                                            <div className="falls-cell__info">
+                                                <div className="falls-cell__info__title">
+                                                    <div className="falls-cell__info__title__sponsor"><img src="https://image.juooo.com/upload/i.png" alt="" /></div>
+                                                    <h3 className="falls-cell__info__title__cell">【演出延期】聚橙出品 |百老汇现象级原版音乐剧《来自远方》-深圳站</h3>
+                                                </div>
+                                                <div className="falls-cell__info__date">
+                                                    <span>2020.06.12 - 06.14</span>
+                                                </div>
+                                                <p className="falls-cell__info__price">
+                                                    <span className="falls-cell__info__price--price">￥280 </span>
+                                                    <span className="falls-cell__info__price__tip">起</span>
+                                                </p>
+                                                <p className="falls-cell__info__support">
+                                                    <span className="falls-cell__info__support--label">电子票</span>
+                                                    <span className="falls-cell__info__support--label">可选座</span>
+                                                    <span className="falls-cell__info__support--label">限时8折起</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </main>
             </div>
