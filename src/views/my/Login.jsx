@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "../../assets/style/login/index.css"
+import Dialog from "../../components/common/Dialog"
+// 引入图片
 import login_cnt_logo from "../../assets/img/login/login_logo.png"
 import login_cnt_delete from "../../assets/img/login/delete.png"
 import eyeClose from "../../assets/img/login/close.png"
@@ -12,6 +14,9 @@ import weiboImg from "../../assets/img/login/weibo.png"
 export default class Login extends Component {
   constructor() {
     super()
+    this.state = {
+      isDialog: false,
+    }
     this.eyeClose = {
       backgroundImage: `url(${eyeClose})`,
     }
@@ -89,11 +94,24 @@ export default class Login extends Component {
               <span className="login__foot__title__txt">其他登陆方式</span>
             </p>
             <div className="login__foot__list">
-              <img src={qqImg} className="login__foot__list__item" />
-              <img src={weiboImg} className="login__foot__list__item" />
+              <img
+                src={qqImg}
+                className="login__foot__list__item"
+                onClick={() => this.setState({ isDialog: true })}
+              />
+              <img
+                src={weiboImg}
+                className="login__foot__list__item"
+                onClick={() => this.setState({ isDialog: true })}
+              />
             </div>
           </div>
         </div>
+        {this.state.isDialog ? (
+          <Dialog handleClick={() => this.setState({ isDialog: false })}>
+            该登陆方式尚未开放，敬请期待
+          </Dialog>
+        ) : null}
       </div>
     )
   }
