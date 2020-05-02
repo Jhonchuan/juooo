@@ -635,11 +635,41 @@
     height: 0.53333rem;
     line-height: 0.53333rem;
 }
+.tour-block__item__bottom__price--price {
+    color: #ff6743;
+    font-size: 0.42667rem;
+}
+.tour-block__item__bottom__price--tips {
+    color: #999;
+    font-size: 0.32rem;
+}
 .tour-block__item__bottom__citys {
     border-top: 1px solid rgba(204, 204, 204, 0.5);
     display: flex;
     padding-top: 0.2rem;
     margin-top: 0.26667rem;
 }
-
+.tour-block__item__bottom__citys__left {
+    color: #999;
+    font-size: 0.32rem;
+    margin-right: 0.2rem;
+    max-width: 1.73333rem;
+}
+.tour-block__item__bottom__citys__left--num {
+    color: #ff6743;
+}
+.tour-block__item__bottom__citys__right {
+    -webkit-box-flex: 1;
+    flex: 1;
+    color: #666;
+    font-size: 0.32rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.delimiter {
+    display: inline-block;
+    margin-left: 0.13333rem;
+    margin-right: 0.13333rem;
+}
 /******************舞台剧********************************************/

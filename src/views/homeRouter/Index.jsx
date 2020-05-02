@@ -211,7 +211,20 @@ export default class Index extends Component {
                                                             <span className="tour-block__item__bottom__price--price">80</span>
                                                             <span className="tour-block__item__bottom__price--tips">起</span>
                                                         </p>
-                                                        <div className="tour-block__item__bottom__citys"></div>
+                                                        <div className="tour-block__item__bottom__citys">
+                                                            <div className="tour-block__item__bottom__citys__left">
+                                                                <span className="tour-block__item__bottom__citys__left--num">6</span>
+                                                                <span>城巡演</span>   
+                                                            </div>
+                                                            <div className="tour-block__item__bottom__citys__right">
+                                                                <span>上海<i className="delimiter">|</i></span>
+                                                                <span>广州<i className="delimiter">|</i></span>
+                                                                <span>深圳<i className="delimiter">|</i></span>
+                                                                <span>成都<i className="delimiter">|</i></span>
+                                                                <span>西安<i className="delimiter">|</i></span>
+                                                                <span>杭州<i className="delimiter">|</i></span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
