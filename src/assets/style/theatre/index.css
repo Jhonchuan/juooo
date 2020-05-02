@@ -1,0 +1,28 @@
+
+.theater-wrap {
+    height: 100%;
+    position: relative;
+}
+.head_nav {
+    position: fixed;
+    top: 0;
+    width: 10rem;
+    height: 1.17333rem;
+    line-height: 1.17333rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ebebeb;
+    background-color: #fefefe;
+    z-index: 100;
+}
+.head_nav .title{
+    font-size: 0.48rem;
+    font-weight: normal;
+    color: #232323;
+    padding: 0 1.33333rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
