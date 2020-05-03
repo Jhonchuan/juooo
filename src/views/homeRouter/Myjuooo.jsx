@@ -37,7 +37,7 @@ export default class Myjuooo extends Component {
                                     <p className="mine-info__main__cnt__item__num">0</p>
                                     <p className="mine-info__main__cnt__item__name">优惠券</p>
                                 </div>
-                                <a href="" className="mine-info__main__cnt__item mine-info__main__cnt__plus">
+                                <a href="/plus/index" className="mine-info__main__cnt__item mine-info__main__cnt__plus">
                                     <p className="mine-info__main__cnt__item__num mine-info__main__cnt__item__num--no">立即开通</p>
                                     <p className="mine-info__main__cnt__item__name">橙PLUS卡</p>
                                 </a>
