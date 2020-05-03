@@ -145,7 +145,7 @@ export default class Index extends Component {
                                                 <div className="swiper-slide swiper-slide-active">
                                                     <a className="hot-block__list__wrap" href="">
                                                         <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
                                                         </div>
                                                         <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
                                                     </a>
@@ -153,7 +153,7 @@ export default class Index extends Component {
                                                 <div className="swiper-slide swiper-slide-next">
                                                     <a className="hot-block__list__wrap" href="">
                                                         <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
                                                         </div>
                                                         <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
                                                     </a>
@@ -161,7 +161,7 @@ export default class Index extends Component {
                                                 <div className="swiper-slide">
                                                     <a className="hot-block__list__wrap" href="">
                                                         <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
                                                         </div>
                                                         <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
                                                     </a>
@@ -169,7 +169,7 @@ export default class Index extends Component {
                                                 <div className="swiper-slide">
                                                     <a className="hot-block__list__wrap" href="">
                                                         <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
                                                         </div>
                                                         <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
                                                     </a>
@@ -191,7 +191,7 @@ export default class Index extends Component {
                                                     <div className="ju-schedule-cell-wrapper middle">
                                                         <div className="ju-schedule-cell">
                                                             <div className="ju-schedule-cell__cover">
-                                                                <div className="image ju-schedule-cell__cover__img"><img src="https://image.juooo.com/group1/M00/04/3E/rAoKNV59rlWAUODrAABlWN_fCvM347.jpg" alt=""/></div>
+                                                                <div className="image ju-schedule-cell__cover__img"><img src="https://image.juooo.com/group1/M00/04/3E/rAoKNV59rlWAUODrAABlWN_fCvM347.jpg" alt="" /></div>
                                                             </div>
                                                             <div className="ju-schedule-cell__info">
                                                                 <div className="ju-schedule-cell__info__date-week">
@@ -211,7 +211,20 @@ export default class Index extends Component {
                                                             <span className="tour-block__item__bottom__price--price">80</span>
                                                             <span className="tour-block__item__bottom__price--tips">起</span>
                                                         </p>
-                                                        <div className="tour-block__item__bottom__citys"></div>
+                                                        <div className="tour-block__item__bottom__citys">
+                                                            <div className="tour-block__item__bottom__citys__left">
+                                                                <span className="tour-block__item__bottom__citys__left--num">6</span>
+                                                                <span>城巡演</span>
+                                                            </div>
+                                                            <div className="tour-block__item__bottom__citys__right">
+                                                                <span>上海<i className="delimiter">|</i></span>
+                                                                <span>广州<i className="delimiter">|</i></span>
+                                                                <span>深圳<i className="delimiter">|</i></span>
+                                                                <span>成都<i className="delimiter">|</i></span>
+                                                                <span>西安<i className="delimiter">|</i></span>
+                                                                <span>杭州<i className="delimiter">|</i></span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -220,7 +233,81 @@ export default class Index extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="index-category-block index-category-wrap"></div>
+                        <div className="index-category-block index-category-wrap">
+                            <section className="category-block__list">
+                                <IndexHeader style={{ "padding-left": "0.4rem" }} title="舞台剧"></IndexHeader>
+                                <div className="category-block__list__row">
+                                    <div className="row--bg">
+                                        <a href="" className="category-block__list__row__wrap">
+                                            <div className="block__list__row__item">
+                                                <img src="https://image.juooo.com//group1/M00/04/21/rAoKNV4Jj32AC3hcAAMtvdtNV6E061.png" alt="" />
+                                            </div>
+                                            <div className="category-block__list__row__info">
+                                                <p className="category-block__list__row__info__date">
+                                                    <strong>2020.07.03 </strong>
+                                                    <span>周五 20:00</span>
+                                                </p>
+                                                <h3 className="category-block__list__row__info__title text-double">
+                                                    【演出延期】2020第七届城市戏剧节荒诞喜剧《劫出人生》-深圳站
+            </h3>
+                                                <p className="category-block__list__row__info__venue text-single">
+                                                    深圳 |
+                                                    南山文体中心剧院小剧院
+            </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="category-block__list__column">
+                                    <div className="swiper-container swiper-container-horizontal">
+                                        <div className="swiper-wrapper">
+                                            <div className="swiper-slide swiper-slide-active">
+                                                <a href="" className="category-block__list__column__wrap">
+                                                    <div className="category-block__list__column__item">
+                                                        <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                    </div>
+                                                    <h3 className="category-block__list__column__title text-double">
+                                                        【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站
+              </h3>
+                                                    <p className="category-block__list__column__price">
+                                                        <strong className="c_ff6">￥99</strong>
+                                                        <span>起</span>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <div className="swiper-slide swiper-slide-active">
+                                                <a href="" className="category-block__list__column__wrap">
+                                                    <div className="category-block__list__column__item">
+                                                        <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                    </div>
+                                                    <h3 className="category-block__list__column__title text-double">
+                                                        【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站
+              </h3>
+                                                    <p className="category-block__list__column__price">
+                                                        <strong className="c_ff6">￥99</strong>
+                                                        <span>起</span>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <div className="swiper-slide swiper-slide-active">
+                                                <a href="" className="category-block__list__column__wrap">
+                                                    <div className="category-block__list__column__item">
+                                                        <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                    </div>
+                                                    <h3 className="category-block__list__column__title text-double">
+                                                        【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站
+              </h3>
+                                                    <p className="category-block__list__column__price">
+                                                        <strong className="c_ff6">￥99</strong>
+                                                        <span>起</span>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
                         <div className="index-model-block">
                             <h3 className="model-block__title">为你推荐</h3>
                             <div className="index-show-model">
