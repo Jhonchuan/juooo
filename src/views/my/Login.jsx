@@ -16,6 +16,7 @@ export default class Login extends Component {
     super()
     this.state = {
       isDialog: false,
+      isEyeOpen: false,
     }
     this.eyeClose = {
       backgroundImage: `url(${eyeClose})`,
@@ -23,6 +24,12 @@ export default class Login extends Component {
     this.eyeOpen = {
       backgroundImage: `url(${eyeOpen})`,
     }
+    this.password = null
+  }
+  eyeChange() {
+    this.setState({ isEyeOpen: true }, () => {
+      this.password.type = "text"
+    })
   }
   render() {
     return (
@@ -54,23 +61,28 @@ export default class Login extends Component {
                 </div>
                 <div className="logo_cnt_pwd_input_item">
                   <input
-                    type="text"
+                    type="password"
                     className="logo_cnt_pwd_input_item_text"
                     placeholder="请输入密码"
+                    ref={e => (this.password = e)}
                   />
                   <img
                     src={login_cnt_delete}
                     alt=""
                     className="login_cnt_delete"
                   />
-                  <span
-                    className="login__cnt__pwd__input__item__eye login__cnt__pwd__input__item__eye"
-                    style={this.eyeClose}
-                  ></span>
-                  <span
-                    className="login__cnt__pwd__input__item__eye login__cnt__pwd__input__item__eye--open"
-                    style={this.eyeOpen}
-                  ></span>
+                  {this.state.isEyeOpen ? (
+                    <span
+                      className="login__cnt__pwd__input__item__eye login__cnt__pwd__input__item__eye--open"
+                      style={this.eyeOpen}
+                    ></span>
+                  ) : (
+                    <span
+                      className="login__cnt__pwd__input__item__eye login__cnt__pwd__input__item__eye"
+                      style={this.eyeClose}
+                      onClick={this.eyeChange.bind(this)}
+                    ></span>
+                  )}
                 </div>
               </div>
               <div className="login__cnt__pwd__btn">
