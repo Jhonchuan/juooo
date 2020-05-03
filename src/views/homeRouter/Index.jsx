@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "../../assets/style/home/index.css"
+import IndexHeader from "../../components/common/IndexHeader"
 export default class Index extends Component {
     render() {
         return (
@@ -97,7 +98,7 @@ export default class Index extends Component {
                                         </div>
                                         <div className="vip-ahead__advert__right">
                                             <span className="vip-ahead__advert__right__lab">99元/年</span>
-                                            <span className="vip-ahead__advert__right__icon">></span>
+                                            <span className="vip-ahead__advert__right__icon"></span>
                                         </div>
                                     </div>
                                 </a>
@@ -107,18 +108,268 @@ export default class Index extends Component {
                                             <div className="swiper-slide-duplicate">
                                                 <div className="vip-ahead__list">
                                                     <div className="vip-ahead__list__item">
-                                                        <a href=""><img src="https://image.juooo.com/group1/M00/04/3C/rAoKNV5wbveAJgk0AABW2kJicvo624.jpg" alt=""/></a>
+                                                        <a href=""><img src="https://image.juooo.com/group1/M00/04/3C/rAoKNV5wbveAJgk0AABW2kJicvo624.jpg" alt="" /></a>
                                                     </div>
-                                                    <div className="vip-ahead__list__info"></div>
-                                                    <a href="/ticket/114166"></a>
+                                                    <div className="vip-ahead__list__info">
+                                                        <a href="/ticket/114166"><h3 className="vip-ahead__list__info__title text-double">【小橙堡】大型3D多媒体亲子科幻剧《恐龙工厂的奇妙夜》</h3></a>
+                                                        <p className="vip-ahead__list__info__tip item-discount">
+                                                            <span className="item-discount__num c_ff6">7</span>
+                                                            <span className="vip-ahead__list__info__tip__text">折起</span>
+                                                        </p>
+                                                    </div>
+                                                    <a href="/ticket/114166">
+                                                        <span className="vip-ahead__list__lab">立即抢购</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="vip-pagination">
+                                            <span className="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                                            <span className="swiper-pagination-bullet"></span>
+                                            <span className="swiper-pagination-bullet"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <div className="index_advertise">
+                                <a className="advertion__block" href=""><img src="https://image.juooo.com/group1/M00/03/96/rAoKmV6W4RyAdkouAAJa2-GtD74165.png" alt="" /></a>
+                            </div>
+                        </section>
+                        <div className="index-hot-wrap">
+                            <div className="blockContent">
+                                <IndexHeader title={"热门演出"}></IndexHeader>
+                                <section>
+                                    <div className="hot-block__list hot-list">
+                                        <div className="swiper-container swiper-container-horizontal">
+                                            <div className="swiper-wrapper">
+                                                <div className="swiper-slide swiper-slide-active">
+                                                    <a className="hot-block__list__wrap" href="">
+                                                        <div className="hot-block__list__wrap__item">
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                        </div>
+                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
+                                                    </a>
+                                                </div>
+                                                <div className="swiper-slide swiper-slide-next">
+                                                    <a className="hot-block__list__wrap" href="">
+                                                        <div className="hot-block__list__wrap__item">
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                        </div>
+                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
+                                                    </a>
+                                                </div>
+                                                <div className="swiper-slide">
+                                                    <a className="hot-block__list__wrap" href="">
+                                                        <div className="hot-block__list__wrap__item">
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                        </div>
+                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
+                                                    </a>
+                                                </div>
+                                                <div className="swiper-slide">
+                                                    <a className="hot-block__list__wrap" href="">
+                                                        <div className="hot-block__list__wrap__item">
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                        </div>
+                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="vip-pagination"></div>
+                                </section>
+                            </div>
+                        </div>
+                        <div className="index-tour-wrap">
+                            <div className="blockContent">
+                                <IndexHeader title={"巡回演出"}></IndexHeader>
+                                <div className="tour-wrap__info">
+                                    <div className="tour-block">
+                                        <div className="tour-container">
+                                            <div className="tour-info">
+                                                <div className="tour-block__item">
+                                                    <div className="ju-schedule-cell-wrapper middle">
+                                                        <div className="ju-schedule-cell">
+                                                            <div className="ju-schedule-cell__cover">
+                                                                <div className="image ju-schedule-cell__cover__img"><img src="https://image.juooo.com/group1/M00/04/3E/rAoKNV59rlWAUODrAABlWN_fCvM347.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div className="ju-schedule-cell__info">
+                                                                <div className="ju-schedule-cell__info__date-week">
+                                                                    <span className="ju-schedule-cell__info__date-week__date"></span>
+                                                                    <span className="ju-schedule-cell__info__date-week__week">2020.08.13 - 10.03</span>
+                                                                </div>
+                                                                <div className="ju-schedule-cell__info__name">
+                                                                    <div className="ju-schedule-cell__info__name__content ">聚橙制作 | 法语音乐剧《摇滚红与黑》</div>
+                                                                </div>
+                                                                <div className="ju-schedule-cell__info__place"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="tour-block__item__bottom">
+                                                        <p className="tour-block__item__bottom__price">
+                                                            <span className="tour-block__item__bottom__price--price">￥</span>
+                                                            <span className="tour-block__item__bottom__price--price">80</span>
+                                                            <span className="tour-block__item__bottom__price--tips">起</span>
+                                                        </p>
+                                                        <div className="tour-block__item__bottom__citys">
+                                                            <div className="tour-block__item__bottom__citys__left">
+                                                                <span className="tour-block__item__bottom__citys__left--num">6</span>
+                                                                <span>城巡演</span>
+                                                            </div>
+                                                            <div className="tour-block__item__bottom__citys__right">
+                                                                <span>上海<i className="delimiter">|</i></span>
+                                                                <span>广州<i className="delimiter">|</i></span>
+                                                                <span>深圳<i className="delimiter">|</i></span>
+                                                                <span>成都<i className="delimiter">|</i></span>
+                                                                <span>西安<i className="delimiter">|</i></span>
+                                                                <span>杭州<i className="delimiter">|</i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="index-category-block index-category-wrap">
+                            <section className="category-block__list">
+                                <IndexHeader style={{ "padding-left": "0.4rem" }} title="舞台剧"></IndexHeader>
+                                <div className="category-block__list__row">
+                                    <div className="row--bg">
+                                        <a href="" className="category-block__list__row__wrap">
+                                            <div className="block__list__row__item">
+                                                <img src="https://image.juooo.com//group1/M00/04/21/rAoKNV4Jj32AC3hcAAMtvdtNV6E061.png" alt="" />
+                                            </div>
+                                            <div className="category-block__list__row__info">
+                                                <p className="category-block__list__row__info__date">
+                                                    <strong>2020.07.03 </strong>
+                                                    <span>周五 20:00</span>
+                                                </p>
+                                                <h3 className="category-block__list__row__info__title text-double">
+                                                    【演出延期】2020第七届城市戏剧节荒诞喜剧《劫出人生》-深圳站
+            </h3>
+                                                <p className="category-block__list__row__info__venue text-single">
+                                                    深圳 |
+                                                    南山文体中心剧院小剧院
+            </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="category-block__list__column">
+                                    <div className="swiper-container swiper-container-horizontal">
+                                        <div className="swiper-wrapper">
+                                            <div className="swiper-slide swiper-slide-active">
+                                                <a href="" className="category-block__list__column__wrap">
+                                                    <div className="category-block__list__column__item">
+                                                        <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                    </div>
+                                                    <h3 className="category-block__list__column__title text-double">
+                                                        【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站
+              </h3>
+                                                    <p className="category-block__list__column__price">
+                                                        <strong className="c_ff6">￥99</strong>
+                                                        <span>起</span>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <div className="swiper-slide swiper-slide-active">
+                                                <a href="" className="category-block__list__column__wrap">
+                                                    <div className="category-block__list__column__item">
+                                                        <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                    </div>
+                                                    <h3 className="category-block__list__column__title text-double">
+                                                        【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站
+              </h3>
+                                                    <p className="category-block__list__column__price">
+                                                        <strong className="c_ff6">￥99</strong>
+                                                        <span>起</span>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <div className="swiper-slide swiper-slide-active">
+                                                <a href="" className="category-block__list__column__wrap">
+                                                    <div className="category-block__list__column__item">
+                                                        <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                                    </div>
+                                                    <h3 className="category-block__list__column__title text-double">
+                                                        【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站
+              </h3>
+                                                    <p className="category-block__list__column__price">
+                                                        <strong className="c_ff6">￥99</strong>
+                                                        <span>起</span>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </section>
-                        </section>
+                        </div>
+                        <div className="index-model-block">
+                            <h3 className="model-block__title">为你推荐</h3>
+                            <div className="index-show-model">
+                                <div className="index-show-model__main">
+                                    <div className="index-show-model__item">
+                                        <div className="index-falls-cell">
+                                            <div className="index-falls-cell__image">
+                                                <img src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg" alt="" />
+                                            </div>
+                                            <div className="falls-cell__info">
+                                                <div className="falls-cell__info__title">
+                                                    <div className="falls-cell__info__title__sponsor"><img src="https://image.juooo.com/upload/i.png" alt="" /></div>
+                                                    <h3 className="falls-cell__info__title__cell">【演出延期】聚橙出品 |百老汇现象级原版音乐剧《来自远方》-深圳站</h3>
+                                                </div>
+                                                <div className="falls-cell__info__date">
+                                                    <span>2020.06.12 - 06.14</span>
+                                                </div>
+                                                <p className="falls-cell__info__price">
+                                                    <span className="falls-cell__info__price--price">￥280 </span>
+                                                    <span className="falls-cell__info__price__tip">起</span>
+                                                </p>
+                                                <p className="falls-cell__info__support">
+                                                    <span className="falls-cell__info__support--label">电子票</span>
+                                                    <span className="falls-cell__info__support--label">可选座</span>
+                                                    <span className="falls-cell__info__support--label">限时8折起</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* 22222222222 */}
+                                    <div style={{
+                                        left: 175,
+                                        top: "0.066667rem",
+                                        opacity: 1
+                                    }} className="index-show-model__item">
+                                        <div className="index-falls-cell">
+                                            <div className="index-falls-cell__image">
+                                                <img src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg" alt="" />
+                                            </div>
+                                            <div className="falls-cell__info">
+                                                <div className="falls-cell__info__title">
+                                                    <div className="falls-cell__info__title__sponsor"><img src="https://image.juooo.com/upload/i.png" alt="" /></div>
+                                                    <h3 className="falls-cell__info__title__cell">【演出延期】聚橙出品 |百老汇现象级原版音乐剧《来自远方》-深圳站</h3>
+                                                </div>
+                                                <div className="falls-cell__info__date">
+                                                    <span>2020.06.12 - 06.14</span>
+                                                </div>
+                                                <p className="falls-cell__info__price">
+                                                    <span className="falls-cell__info__price--price">￥280 </span>
+                                                    <span className="falls-cell__info__price__tip">起</span>
+                                                </p>
+                                                <p className="falls-cell__info__support">
+                                                    <span className="falls-cell__info__support--label">电子票</span>
+                                                    <span className="falls-cell__info__support--label">可选座</span>
+                                                    <span className="falls-cell__info__support--label">限时8折起</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </main>
             </div>
