@@ -5,6 +5,8 @@ export default function Login(state = LoginInit, { type, payload }) {
   if (type === LoginActionType.CHANGE_IMG_CAPTCHA) {
     state.captchaCode = payload
   }
-
+  if (type === LoginActionType.GET_PHONE_CAPTCHA) {
+    state.phoneCaptcha = payload
+  }
   return state
 }
