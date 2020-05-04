@@ -12,6 +12,7 @@ import store from "./store/index"
 import "lib-flexible";
 import axios from "axios"
 
+React.Component.prototype.$axios = axios;
 axios.interceptors.request.use(config=>{
   config.url = "/orange"+config.url
   return config

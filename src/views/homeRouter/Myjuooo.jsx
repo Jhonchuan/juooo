@@ -9,7 +9,7 @@ export default class Myjuooo extends Component {
                 <div className="my-minebody">
                     <div className="my-mine-info mine-info">
                         <div className="my-mine-info__icon">
-                            <a href=""><i className="iconfont icon-sangedian"></i></a>
+                            <a href="/#"><i className="iconfont icon-sangedian"></i></a>
                         </div>
                         <div className="mine-info__main">
                             <div className="mine-info__main__head">
@@ -44,7 +44,7 @@ export default class Myjuooo extends Component {
                             </div>
                         </div>
                     </div>
-                    <a className="my-mine-vip" href="">
+                    <a className="my-mine-vip" href="/#">
                         <img src="https://m.juooo.com/static/img/ad.411f5e6.png" alt="" />
                     </a>
                     <div className="my-mine-setting">
@@ -89,7 +89,7 @@ export default class Myjuooo extends Component {
                             </li>
                             {/* ***************** */}
                             <li className="mine-setting__list__item">
-                                <a className="mine-setting__list__item--link">
+                                <a href="/#" className="mine-setting__list__item--link">
                                     <i className="icon icon-help"></i>
                                     <p className="mine-setting__list__item__name mine-setting__list__item__name--active">客服帮助</p>
                                 </a>
