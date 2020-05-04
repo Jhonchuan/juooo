@@ -1,7 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, useRef } from 'react'
 import "../../assets/style/home/index.css"
 import IndexHeader from "../../components/common/IndexHeader"
-export default class Index extends Component {
+import { connect } from "react-redux"
+import homeActionCreator from "../../store/actionCreator/Home/index"
+import Swiper from "swiper"
+import "swiper/css/swiper.min.css"
+class Index extends Component {
+    constructor() {
+        super();
+        this.state = {
+            classify_list: [],
+            slide_list: [],
+            data: [],
+            leftDate: [],
+            rightDate: []
+        }
+    }
     render() {
         return (
             <div className={"home_page"}>
@@ -20,74 +34,39 @@ export default class Index extends Component {
                 </header>
                 <main className="index_main">
                     <section className="index_main_section">
-                        <div className="index_head_banner">
-                            <div className="bannerContainer">
-                                <img src="https://image.juooo.com/group1/M00/04/27/rAoKNV4Sy5GATMm-AAC9YOlU_NU569.png" alt="" />
+                        <div style={{
+                            padding: "1.37333rem 0.4rem 0",
+                        }}>
+                            <div className="swiper-container" style={{
+                                height: "3.73333rem",
+                                borderRadius: "0.16rem"
+                            }}>
+                                <div className="swiper-wrapper">
+                                    {
+                                        this.props.swiperList.map(v => (
+                                            <div key={v.image_url} className="swiper-slide">
+                                                <img width="100%" height="100%" src={v.image_url} alt="" />
+                                            </div>
+                                        ))
+                                    }
+
+                                </div>
+                                <div className="swiper-pagination"></div>
                             </div>
                         </div>
+
                         <section className="index_advertion">
                             <div className="index_labelItem">
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-                                <div className="item">
-                                    <a className="label-item__block__column" href="">
-                                        <img className="label-item__block__column__icon" src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4Bd7KAJp3dAAAHBeNpsuY695.png" alt="" />
-                                        <span className="label-item__block__column__title">演唱会</span>
-                                    </a>
-                                </div>
-
+                                {
+                                    this.state.classify_list.map(v => (
+                                        <div key={v.id} className="item">
+                                            <a className="label-item__block__column" href="/#">
+                                                <img className="label-item__block__column__icon" src={v.pic} alt="" />
+                                                <span className="label-item__block__column__title">{v.name}</span>
+                                            </a>
+                                        </div>
+                                    ))
+                                }
                             </div>
                             <section className="vip_ahead">
                                 <a href="/vip/index/1">
@@ -102,37 +81,42 @@ export default class Index extends Component {
                                         </div>
                                     </div>
                                 </a>
-                                <div className="vip_ahead_swiper">
+                                <div className="vip_ahead_eswiper">
                                     <div className="swiper-container">
                                         <div className="swiper-wrapper">
-                                            <div className="swiper-slide-duplicate">
-                                                <div className="vip-ahead__list">
-                                                    <div className="vip-ahead__list__item">
-                                                        <a href=""><img src="https://image.juooo.com/group1/M00/04/3C/rAoKNV5wbveAJgk0AABW2kJicvo624.jpg" alt="" /></a>
+                                            {
+                                                this.props.discountList.map(v => (
+                                                    <div className="swiper-slide">
+                                                        <div className="vip-ahead__list">
+                                                            <div className="vip-ahead__list__item">
+                                                                <a href="/#"><img src={v.pic} alt="" /></a>
+                                                            </div>
+                                                            <div className="vip-ahead__list__info">
+                                                <a href="/ticket/114166"><h3 className="vip-ahead__list__info__title text-double">{v.schedular_name}</h3></a>
+                                                                <p className="vip-ahead__list__info__tip item-discount">
+                                                <span className="item-discount__num c_ff6">{v.min_discount}</span>
+                                                                    <span className="vip-ahead__list__info__tip__text">折起</span>
+                                                                </p>
+                                                            </div>
+                                                            <a href="/ticket/114166">
+                                                                <span className="vip-ahead__list__lab">立即抢购</span>
+                                                            </a>
+                                                        </div>
                                                     </div>
-                                                    <div className="vip-ahead__list__info">
-                                                        <a href="/ticket/114166"><h3 className="vip-ahead__list__info__title text-double">【小橙堡】大型3D多媒体亲子科幻剧《恐龙工厂的奇妙夜》</h3></a>
-                                                        <p className="vip-ahead__list__info__tip item-discount">
-                                                            <span className="item-discount__num c_ff6">7</span>
-                                                            <span className="vip-ahead__list__info__tip__text">折起</span>
-                                                        </p>
-                                                    </div>
-                                                    <a href="/ticket/114166">
-                                                        <span className="vip-ahead__list__lab">立即抢购</span>
-                                                    </a>
-                                                </div>
-                                            </div>
+                                                ))
+                                            }
+
                                         </div>
                                         <div className="vip-pagination">
-                                            <span className="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-                                            <span className="swiper-pagination-bullet"></span>
-                                            <span className="swiper-pagination-bullet"></span>
+                                            <span className="eswiper-pagination-bullet eswiper-pagination-bullet-active"></span>
+                                            <span className="eswiper-pagination-bullet"></span>
+                                            <span className="eswiper-pagination-bullet"></span>
                                         </div>
                                     </div>
                                 </div>
                             </section>
                             <div className="index_advertise">
-                                <a className="advertion__block" href=""><img src="https://image.juooo.com/group1/M00/03/96/rAoKmV6W4RyAdkouAAJa2-GtD74165.png" alt="" /></a>
+                                <a className="advertion__block" href="/#"><img src="https://image.juooo.com/group1/M00/03/96/rAoKmV6W4RyAdkouAAJa2-GtD74165.png" alt="" /></a>
                             </div>
                         </section>
                         <div className="index-hot-wrap">
@@ -140,40 +124,20 @@ export default class Index extends Component {
                                 <IndexHeader title={"热门演出"}></IndexHeader>
                                 <section>
                                     <div className="hot-block__list hot-list">
-                                        <div className="swiper-container swiper-container-horizontal">
-                                            <div className="swiper-wrapper">
-                                                <div className="swiper-slide swiper-slide-active">
-                                                    <a className="hot-block__list__wrap" href="">
-                                                        <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                        <div className="eswiper-container eswiper-container-horizontal">
+                                            <div className="eswiper-wrapper">
+                                                {
+                                                    this.props.hot_list.map(v => (
+                                                        <div key={v.pic} className="eswiper-slide eswiper-slide-active">
+                                                            <a className="hot-block__list__wrap" href="/#">
+                                                                <div className="hot-block__list__wrap__item">
+                                                                    <img src={v.pic} alt="" />
+                                                                </div>
+                                                                <h3 className="hot-block__list__wrap__title text-double">{v.show_name}</h3>
+                                                            </a>
                                                         </div>
-                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
-                                                    </a>
-                                                </div>
-                                                <div className="swiper-slide swiper-slide-next">
-                                                    <a className="hot-block__list__wrap" href="">
-                                                        <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                                                        </div>
-                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
-                                                    </a>
-                                                </div>
-                                                <div className="swiper-slide">
-                                                    <a className="hot-block__list__wrap" href="">
-                                                        <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                                                        </div>
-                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
-                                                    </a>
-                                                </div>
-                                                <div className="swiper-slide">
-                                                    <a className="hot-block__list__wrap" href="">
-                                                        <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                                                        </div>
-                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
-                                                    </a>
-                                                </div>
+                                                    ))
+                                                }
                                             </div>
                                         </div>
                                     </div>
@@ -238,7 +202,7 @@ export default class Index extends Component {
                                 <IndexHeader style={{ "padding-left": "0.4rem" }} title="舞台剧"></IndexHeader>
                                 <div className="category-block__list__row">
                                     <div className="row--bg">
-                                        <a href="" className="category-block__list__row__wrap">
+                                        <a href="/#" className="category-block__list__row__wrap">
                                             <div className="block__list__row__item">
                                                 <img src="https://image.juooo.com//group1/M00/04/21/rAoKNV4Jj32AC3hcAAMtvdtNV6E061.png" alt="" />
                                             </div>
@@ -259,50 +223,26 @@ export default class Index extends Component {
                                     </div>
                                 </div>
                                 <div className="category-block__list__column">
-                                    <div className="swiper-container swiper-container-horizontal">
-                                        <div className="swiper-wrapper">
-                                            <div className="swiper-slide swiper-slide-active">
-                                                <a href="" className="category-block__list__column__wrap">
-                                                    <div className="category-block__list__column__item">
-                                                        <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
+                                    <div className="eswiper-container eswiper-container-horizontal">
+                                        <div className="eswiper-wrapper">
+                                            {
+                                                this.props.stageList.map(v => (
+                                                    <div key={v.sche_id} className="eswiper-slide eswiper-slide-active">
+                                                        <a href="/#" className="category-block__list__column__wrap">
+                                                            <div className="category-block__list__column__item">
+                                                                <img src={v.pic} alt="" />
+                                                            </div>
+                                                            <h3 className="category-block__list__column__title text-double">
+                                                                {v.schedular_name}
+                                                            </h3>
+                                                            <p className="category-block__list__column__price">
+                                                                <strong className="c_ff6">{v.low_price}</strong>
+                                                                <span>起</span>
+                                                            </p>
+                                                        </a>
                                                     </div>
-                                                    <h3 className="category-block__list__column__title text-double">
-                                                        【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站
-              </h3>
-                                                    <p className="category-block__list__column__price">
-                                                        <strong className="c_ff6">￥99</strong>
-                                                        <span>起</span>
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <div className="swiper-slide swiper-slide-active">
-                                                <a href="" className="category-block__list__column__wrap">
-                                                    <div className="category-block__list__column__item">
-                                                        <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                                                    </div>
-                                                    <h3 className="category-block__list__column__title text-double">
-                                                        【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站
-              </h3>
-                                                    <p className="category-block__list__column__price">
-                                                        <strong className="c_ff6">￥99</strong>
-                                                        <span>起</span>
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <div className="swiper-slide swiper-slide-active">
-                                                <a href="" className="category-block__list__column__wrap">
-                                                    <div className="category-block__list__column__item">
-                                                        <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                                                    </div>
-                                                    <h3 className="category-block__list__column__title text-double">
-                                                        【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站
-              </h3>
-                                                    <p className="category-block__list__column__price">
-                                                        <strong className="c_ff6">￥99</strong>
-                                                        <span>起</span>
-                                                    </p>
-                                                </a>
-                                            </div>
+                                                ))
+                                            }
                                         </div>
                                     </div>
                                 </div>
@@ -312,60 +252,90 @@ export default class Index extends Component {
                             <h3 className="model-block__title">为你推荐</h3>
                             <div className="index-show-model">
                                 <div className="index-show-model__main">
-                                    <div className="index-show-model__item">
-                                        <div className="index-falls-cell">
-                                            <div className="index-falls-cell__image">
-                                                <img src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg" alt="" />
-                                            </div>
-                                            <div className="falls-cell__info">
-                                                <div className="falls-cell__info__title">
-                                                    <div className="falls-cell__info__title__sponsor"><img src="https://image.juooo.com/upload/i.png" alt="" /></div>
-                                                    <h3 className="falls-cell__info__title__cell">【演出延期】聚橙出品 |百老汇现象级原版音乐剧《来自远方》-深圳站</h3>
+                                    {/* 瀑布流 */}
+                                    <div
+                                        style={{
+                                            position: "absolute",
+                                            left: 0,
+                                            height:500
+                                        }} className="left">
+                                        {
+                                            this.state.leftDate.map(v => (
+                                                <div
+                                                    key={v.schedular_id}
+                                                    style={{
+                                                        opacity: 1
+                                                    }} className="index-show-model__item">
+                                                    <div className="index-falls-cell">
+                                                        <div className="index-falls-cell__image">
+                                                            <img src={v.pic} alt="" />
+                                                        </div>
+                                                        <div className="falls-cell__info">
+                                                            <div className="falls-cell__info__title">
+                                                                <div className="falls-cell__info__title__sponsor"><img src="https://image.juooo.com/upload/i.png" alt="" /></div>
+                                                                <h3 className="falls-cell__info__title__cell">{v.name}</h3>
+                                                            </div>
+                                                            <div className="falls-cell__info__date">
+                                                                <span>2020.{v.show_time_top.replace("/", ".").replace("/", ".")}</span>
+                                                            </div>
+                                                            <p className="falls-cell__info__price">
+                                                                <span className="falls-cell__info__price--price">￥{v.min_price} </span>
+                                                                <span className="falls-cell__info__price__tip">起</span>
+                                                            </p>
+                                                            <p className="falls-cell__info__support">
+                                                                {
+                                                                    v.support_desc.map((item, i) => (
+                                                                        <span key={i} className="falls-cell__info__support--label">{item}</span>
+                                                                    ))
+                                                                }
+                                                            </p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className="falls-cell__info__date">
-                                                    <span>2020.06.12 - 06.14</span>
-                                                </div>
-                                                <p className="falls-cell__info__price">
-                                                    <span className="falls-cell__info__price--price">￥280 </span>
-                                                    <span className="falls-cell__info__price__tip">起</span>
-                                                </p>
-                                                <p className="falls-cell__info__support">
-                                                    <span className="falls-cell__info__support--label">电子票</span>
-                                                    <span className="falls-cell__info__support--label">可选座</span>
-                                                    <span className="falls-cell__info__support--label">限时8折起</span>
-                                                </p>
-                                            </div>
-                                        </div>
+                                            ))
+
+                                        }
                                     </div>
-                                    {/* 22222222222 */}
-                                    <div style={{
-                                        left: 175,
-                                        top: "0.066667rem",
-                                        opacity: 1
-                                    }} className="index-show-model__item">
-                                        <div className="index-falls-cell">
-                                            <div className="index-falls-cell__image">
-                                                <img src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg" alt="" />
-                                            </div>
-                                            <div className="falls-cell__info">
-                                                <div className="falls-cell__info__title">
-                                                    <div className="falls-cell__info__title__sponsor"><img src="https://image.juooo.com/upload/i.png" alt="" /></div>
-                                                    <h3 className="falls-cell__info__title__cell">【演出延期】聚橙出品 |百老汇现象级原版音乐剧《来自远方》-深圳站</h3>
+                                    <div
+                                        style={{
+                                            position: "absolute",
+                                            left: 175
+                                        }} className="right">
+                                        {
+                                            this.state.rightDate.map(v => (
+                                                <div
+                                                    key={v.schedular_id}
+                                                    style={{
+                                                        opacity: 1
+                                                    }} className="index-show-model__item">
+                                                    <div className="index-falls-cell">
+                                                        <div className="index-falls-cell__image">
+                                                            <img src={v.pic} alt="" />
+                                                        </div>
+                                                        <div className="falls-cell__info">
+                                                            <div className="falls-cell__info__title">
+                                                                <div className="falls-cell__info__title__sponsor"><img src="https://image.juooo.com/upload/i.png" alt="" /></div>
+                                                                <h3 className="falls-cell__info__title__cell">{v.name}</h3>
+                                                            </div>
+                                                            <div className="falls-cell__info__date">
+                                                                <span>2020.{v.show_time_top.replace("/", ".").replace("/", ".")}</span>
+                                                            </div>
+                                                            <p className="falls-cell__info__price">
+                                                                <span className="falls-cell__info__price--price">￥{v.min_price} </span>
+                                                                <span className="falls-cell__info__price__tip">起</span>
+                                                            </p>
+                                                            <p className="falls-cell__info__support">
+                                                                {
+                                                                    v.support_desc.map((item, i) => (
+                                                                        <span key={i} className="falls-cell__info__support--label">{item}</span>
+                                                                    ))
+                                                                }
+                                                            </p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className="falls-cell__info__date">
-                                                    <span>2020.06.12 - 06.14</span>
-                                                </div>
-                                                <p className="falls-cell__info__price">
-                                                    <span className="falls-cell__info__price--price">￥280 </span>
-                                                    <span className="falls-cell__info__price__tip">起</span>
-                                                </p>
-                                                <p className="falls-cell__info__support">
-                                                    <span className="falls-cell__info__support--label">电子票</span>
-                                                    <span className="falls-cell__info__support--label">可选座</span>
-                                                    <span className="falls-cell__info__support--label">限时8折起</span>
-                                                </p>
-                                            </div>
-                                        </div>
+                                            ))
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -375,4 +345,84 @@ export default class Index extends Component {
             </div>
         )
     }
+    getHW(data) {
+        console.log(data)
+        let leftDate = [];
+        let rightDate = [];
+        data.forEach((item, index) => {
+            if (index === 0) {
+                leftDate.push(item)
+            } else if (index === 1) {
+                rightDate.push(item)
+            } else if (index % 2 === 0) {
+                leftDate.push(item)
+            } else {
+                rightDate.push(item)
+            }
+        })
+        this.setState({
+            leftDate,
+            rightDate
+        })
+    }
+    async componentDidMount() {
+        new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            observer: true,
+            observeParents: true,
+        });
+        const showList = await this.$axios.get("/Show/Search/getShowList", {
+            params: {
+                city_id: 0,
+                page: 1
+            }
+        })
+        const { data } = await this.$axios.get("/home/index/getClassifyHome", {
+            params: {
+                city_id: 0
+            }
+        })
+        this.setState({
+            classify_list: data.classify_list,
+            slide_list: data.slide_list,
+            data: showList.data.list
+        }, () => {
+            this.getHW(this.state.data)
+        })
+        this.props.getHotList();
+        this.props.getFloorList();
+        this.props.getSwiperList();
+        this.props.getDiscountList()
+    }
 }
+function mapStateToProps(state) {
+    console.log(state)
+    return {
+        hot_list: state.homeReducer.hot_list,
+        stageList: state.homeReducer.stageList,
+        swiperList: state.homeReducer.swiperList,
+        discountList: state.homeReducer.discountList
+    }
+}
+function mapDisapatchToProps(dispatch) {
+    return {
+        getHotList() {
+            dispatch(homeActionCreator.getHotList.call())
+        },
+        getFloorList() {
+            dispatch(homeActionCreator.getFloorShowList.call())
+        },
+        getSwiperList() {
+            dispatch(homeActionCreator.getSwiperPics.call())
+        },
+        getDiscountList() {
+            dispatch(homeActionCreator.getDiscountList.call())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDisapatchToProps)(Index)

@@ -8,7 +8,4 @@ export default class GuardRouter extends Component {
             </div>
         )
     }
-    componentDidMount(){
-        console.log(this.props)
-    }
 }
