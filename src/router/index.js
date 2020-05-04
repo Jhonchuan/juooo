@@ -24,7 +24,7 @@ export default [
     component: ThreaterDetail,
   },
   {
-    path: "/ticket",
+    path: "/ticket/:id",
     component: Ticket,
   },
   {
