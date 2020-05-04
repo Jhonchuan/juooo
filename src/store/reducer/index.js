@@ -6,10 +6,7 @@ import { combineReducers } from "redux"
 const rootReducer = combineReducers({
   ticketReducer,
   dialog,
-<<<<<<< HEAD
-  homeReducer
-=======
+  homeReducer,
   login,
->>>>>>> wxa
 })
 export default rootReducer

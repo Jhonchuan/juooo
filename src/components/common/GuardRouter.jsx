@@ -1,15 +1,6 @@
 import React, { Component } from "react"
 
 export default class GuardRouter extends Component {
-<<<<<<< HEAD
-    render() {
-        return (
-            <div>
-                <this.props.component {...this.props}/>
-            </div>
-        )
-    }
-=======
   render() {
     return (
       <div>
@@ -23,5 +14,4 @@ export default class GuardRouter extends Component {
       localStorage.returnUrl = window.location.href
     }
   }
->>>>>>> wxa
 }
