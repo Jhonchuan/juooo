@@ -1,6 +1,7 @@
 import React, { Component, useRef } from 'react'
 import "../../assets/style/home/index.css"
 import IndexHeader from "../../components/common/IndexHeader"
+<<<<<<< HEAD
 import { connect } from "react-redux"
 import homeActionCreator from "../../store/actionCreator/Home/index"
 import Swiper from "swiper"
@@ -16,6 +17,9 @@ class Index extends Component {
             rightDate: []
         }
     }
+=======
+export default class Index extends Component {
+>>>>>>> wxa
     render() {
         return (
             <div className={"home_page"}>
@@ -124,6 +128,7 @@ class Index extends Component {
                                 <IndexHeader title={"热门演出"}></IndexHeader>
                                 <section>
                                     <div className="hot-block__list hot-list">
+<<<<<<< HEAD
                                         <div className="eswiper-container eswiper-container-horizontal">
                                             <div className="eswiper-wrapper">
                                                 {
@@ -138,6 +143,97 @@ class Index extends Component {
                                                         </div>
                                                     ))
                                                 }
+=======
+                                        <div className="swiper-container swiper-container-horizontal">
+                                            <div className="swiper-wrapper">
+                                                <div className="swiper-slide swiper-slide-active">
+                                                    <a className="hot-block__list__wrap" href="">
+                                                        <div className="hot-block__list__wrap__item">
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
+                                                        </div>
+                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
+                                                    </a>
+                                                </div>
+                                                <div className="swiper-slide swiper-slide-next">
+                                                    <a className="hot-block__list__wrap" href="">
+                                                        <div className="hot-block__list__wrap__item">
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
+                                                        </div>
+                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
+                                                    </a>
+                                                </div>
+                                                <div className="swiper-slide">
+                                                    <a className="hot-block__list__wrap" href="">
+                                                        <div className="hot-block__list__wrap__item">
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
+                                                        </div>
+                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
+                                                    </a>
+                                                </div>
+                                                <div className="swiper-slide">
+                                                    <a className="hot-block__list__wrap" href="">
+                                                        <div className="hot-block__list__wrap__item">
+                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
+                                                        </div>
+                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div className="index-tour-wrap">
+                            <div className="blockContent">
+                                <IndexHeader title={"巡回演出"}></IndexHeader>
+                                <div className="tour-wrap__info">
+                                    <div className="tour-block">
+                                        <div className="tour-container">
+                                            <div className="tour-info">
+                                                <div className="tour-block__item">
+                                                    <div className="ju-schedule-cell-wrapper middle">
+                                                        <div className="ju-schedule-cell">
+                                                            <div className="ju-schedule-cell__cover">
+                                                                <div className="image ju-schedule-cell__cover__img"><img src="https://image.juooo.com/group1/M00/04/3E/rAoKNV59rlWAUODrAABlWN_fCvM347.jpg" alt=""/></div>
+                                                            </div>
+                                                            <div className="ju-schedule-cell__info">
+                                                                <div className="ju-schedule-cell__info__date-week">
+                                                                    <span className="ju-schedule-cell__info__date-week__date"></span>
+                                                                    <span className="ju-schedule-cell__info__date-week__week">2020.08.13 - 10.03</span>
+                                                                </div>
+                                                                <div className="ju-schedule-cell__info__name">
+                                                                    <div className="ju-schedule-cell__info__name__content ">聚橙制作 | 法语音乐剧《摇滚红与黑》</div>
+                                                                </div>
+                                                                <div className="ju-schedule-cell__info__place"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="tour-block__item__bottom">
+                                                        <p className="tour-block__item__bottom__price">
+                                                            <span className="tour-block__item__bottom__price--price">￥</span>
+                                                            <span className="tour-block__item__bottom__price--price">80</span>
+                                                            <span className="tour-block__item__bottom__price--tips">起</span>
+                                                        </p>
+                                                        <div className="tour-block__item__bottom__citys"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="index-category-block index-category-wrap"></div>
+                        <div className="index-model-block">
+                            <h3 className="model-block__title">为你推荐</h3>
+                            <div className="index-show-model">
+                                <div className="index-show-model__main">
+                                    <div className="index-show-model__item">
+                                        <div className="index-falls-cell">
+                                            <div className="index-falls-cell__image">
+                                                <img src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg" alt="" />
+>>>>>>> wxa
                                             </div>
                                         </div>
                                     </div>

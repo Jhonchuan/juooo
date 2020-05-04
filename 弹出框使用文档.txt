@@ -2,8 +2,8 @@
 源码在./src/components/common/Dialog.jsx
 路由：http://localhost:3000/test
 可配置属性：
- type：弹出框类型（默认确认框）
- closeFuction：弹出框点击确认时执行函数
+ type：弹出框类型（默认确认框），confirm，alert，loading
+ closeFuction：弹出框点击确认时执行函数，必须传入一个函数
  引入组件写的内容：弹出框提示内容
 使用方法：
 （1）引入Dialog组件

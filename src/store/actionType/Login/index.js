@@ -1,0 +1,3 @@
+export default {
+  CHANGE_IMG_CAPTCHA: "CHANGE_IMG_CAPTCHA",
+}
