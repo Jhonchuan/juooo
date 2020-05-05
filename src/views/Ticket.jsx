@@ -1,9 +1,18 @@
 import React, {Component} from "react"
+import {withRouter} from "react-router-dom"
 import Home from "./Home"
 import Comm from "../components/common/CommonHeader.jsx"
 import "../assets/style/ticket/index.css"
 
-export default class Ticket extends Component {
+class Ticket extends Component {
+    constructor(){
+        super();
+        this.state = {
+            showInfo:{},
+            cityInfo:{},
+            venueInfo:{}
+        }
+    }
     render() {
         return (
             <div>
@@ -11,7 +20,7 @@ export default class Ticket extends Component {
                     <div className="detail">
                         <div className="brief detail__brief">
                             <div className="brief__bg-wrapper">
-                                <img src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg"
+                                <img src={this.state.showInfo.pic}
                                      className="brief__bg" alt=""/>
                             </div>
                             <div className="brief__mask"></div>
@@ -26,7 +35,7 @@ export default class Ticket extends Component {
                                     <div className="brief__primary__fg__content">
                                         <div className="image brief__primary__fg__content__cover">
                                             <img
-                                                src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg"
+                                                src={this.state.showInfo.pic}
                                                 className="ju-image ju-image--fill" alt=""/>
                                         </div>
                                         <div className="brief__primary__fg__content__tag">
@@ -36,14 +45,14 @@ export default class Ticket extends Component {
                                         </div>
                                         <div className="brief__primary__fg__content__info">
                                             <div className="brief__primary__fg__content__info__name">
-                                                【演出延期】聚橙出品 |百老汇现象级原版音乐剧《来自远方》-深圳站
+                                                {this.state.showInfo.show_name}
                                             </div>
                                             <div className="brief__primary__fg__content__info__tag-wrapper">
                                                 <div className="brief__primary__fg__content__info__tag"></div>
                                             </div>
                                             <div className="brief__primary__fg__content__info__price">
                                                 <span
-                                                    className="brief__primary__fg__content__info__price__range">¥280-1080</span>
+                                                    className="brief__primary__fg__content__info__price__range">¥{this.state.showInfo.price_range}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -70,10 +79,10 @@ export default class Ticket extends Component {
                                             </div>
                                         </div>
                                         <div className="brief__secondary__info__place">
-                                            深圳 | 南山文体中心剧院大剧院
+                                            {this.state.cityInfo.city_name} | {this.state.venueInfo.venue_name}
                                         </div>
                                         <div className="brief__secondary__info__address">
-                                            南山区南山大道南头街62号
+                                            {this.state.venueInfo.venue_address}
                                         </div>
                                     </div>
                                     <div className="brief__secondary__pointer">
@@ -337,4 +346,18 @@ export default class Ticket extends Component {
             </div>
         )
     }
+    async componentDidMount(){
+        // console.log(this.props.match.params.id)
+        const {data} = await this.$axios.get("/Schedule/Schedule/getScheduleInfo",{
+            params:{
+                schedular_id:this.props.match.params.id
+            }
+        })
+        this.setState({
+            showInfo:data.static_data,
+            cityInfo:data.static_data.city,
+            venueInfo:data.static_data.venue
+        })
+    }
 }
+export default withRouter(Ticket)
