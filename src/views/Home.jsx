@@ -8,13 +8,13 @@ export default class Home extends Component {
         <nav className={"bottom_nav"}>
           <div className="tabs-block__nav__item">
             <div className="tabs-block__nav__item__link">
-              <span className="tabs-block__nav__item__link--icon ticket--icon"></span>
+              <span className="tabs-block__nav__item__link--icon home--icon"></span>
               <NavLink className="link-route" to={"/"}>首页</NavLink>
             </div>
           </div>
           <div className="tabs-block__nav__item">
             <div className="tabs-block__nav__item__link">
-              <span className="tabs-block__nav__item__link--icon ticket--icon"></span>
+              <span className="tabs-block__nav__item__link--icon theater--icon"></span>
               <NavLink className="link-route" to={"/theatre/theatreList"}>剧院</NavLink>
             </div>
           </div>
@@ -26,7 +26,7 @@ export default class Home extends Component {
           </div>
           <div className="tabs-block__nav__item">
             <div className="tabs-block__nav__item__link">
-              <span className="tabs-block__nav__item__link--icon ticket--icon"></span>
+              <span className="tabs-block__nav__item__link--icon my--icon"></span>
               <NavLink className="link-route" to={"/myjuooo/myjuooo"}>我的</NavLink>
             </div>
           </div>

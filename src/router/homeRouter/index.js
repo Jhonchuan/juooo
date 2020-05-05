@@ -5,7 +5,8 @@ import Index from "../../views/homeRouter/Index"
 export default [
     {
         path:"/theatre/theatreList",
-        component:ThreaterList
+        component:ThreaterList,
+        exact:true
     },
     {
         path:"/eticket/list",

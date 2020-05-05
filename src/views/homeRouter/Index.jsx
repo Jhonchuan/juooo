@@ -5,9 +5,12 @@ import { connect } from "react-redux"
 import homeActionCreator from "../../store/actionCreator/Home/index"
 import Swiper from "swiper"
 import "swiper/css/swiper.min.css"
+// import {} from ""
 class Index extends Component {
     constructor() {
         super();
+        this.page = 0;
+        this.isAxios = false;
         this.state = {
             classify_list: [],
             slide_list: [],
@@ -18,7 +21,7 @@ class Index extends Component {
     }
     render() {
         return (
-            <div className={"home_page"}>
+            <div ref={e => (this.scroll = e)} className={"home_page"}>
                 <header className={"index_header"}>
                     <div className="header_address">
                         <strong className="address_icon"></strong>
@@ -42,13 +45,43 @@ class Index extends Component {
                                 borderRadius: "0.16rem"
                             }}>
                                 <div className="swiper-wrapper">
-                                    {
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/04/40/rAoKNV6W4PKACOg2AAEj0bMT7bw022.png" alt="" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/03/94/rAoKmV59ZUyAfU1aAAESuLTnTAw739.png" alt="" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/03/95/rAoKmV6Ods6AIHoPAAFqMr3vOqU261.jpg" alt="" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/04/3E/rAoKNV6ClgWAOtm_AAEhpdmQomE538.jpg" alt="" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/03/95/rAoKmV6G87GAHBZeAAFRP1wgp3U464.jpg" alt="" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/04/3F/rAoKNV6G8wWAbQo9AAFKecTbTmI168.jpg" alt="" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/03/6D/rAoKmV4B3DeAAheBAAE8k0yWnNo649.png" alt="" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/03/6D/rAoKmV4B3CmARboCAACCt7TZJ7k095.png" alt="" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/03/6D/rAoKmV4B29-AdwTZAAB-i9-En8E765.png" alt="" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img width="100%" height="100%" src="https://image.juooo.com/group1/M00/04/17/rAoKNV4B2zOADywIAACKVI3TINE298.png" alt="" />
+                                    </div>
+                                    {/* {
                                         this.props.swiperList.map(v => (
                                             <div key={v.image_url} className="swiper-slide">
                                                 <img width="100%" height="100%" src={v.image_url} alt="" />
                                             </div>
                                         ))
-                                    }
+                                    } */}
                                 </div>
                                 <div className="swiper-pagination"></div>
                             </div>
@@ -88,7 +121,7 @@ class Index extends Component {
                                         <div className="swiper-wrapper">
                                             {
                                                 this.props.discountList.map(v => (
-                                                    <div className="swiper-slide">
+                                                    <div key={v.pic} className="swiper-slide">
                                                         <div className="vip-ahead__list">
                                                             <div className="vip-ahead__list__item">
                                                                 <a href="/#"><img src={v.pic} alt="" /></a>
@@ -107,9 +140,7 @@ class Index extends Component {
                                                     </div>
                                                 ))
                                             }
-
                                         </div>
-
                                         <div className="swiper-pagination"></div>
                                     </div>
                                 </div>
@@ -126,16 +157,18 @@ class Index extends Component {
                                         <div className="eswiper-container eswiper-container-horizontal">
                                             <div className="eswiper-wrapper">
                                                 {
-                                                    this.props.hot_list.map(v => (
-                                                        <div key={v.pic} className="eswiper-slide eswiper-slide-active">
-                                                            <a className="hot-block__list__wrap" href="/#">
-                                                                <div className="hot-block__list__wrap__item">
-                                                                    <img src={v.pic} alt="" />
-                                                                </div>
-                                                                <h3 className="hot-block__list__wrap__title text-double">{v.show_name}</h3>
-                                                            </a>
-                                                        </div>
-                                                    ))
+                                                    this.props.hot_list.map(v => {
+                                                        return (
+                                                            <div key={v.pic} className="eswiper-slide eswiper-slide-active">
+                                                                <a className="hot-block__list__wrap" href={"/ticket/"+v.schedular_url.substring(27)}>
+                                                                    <div className="hot-block__list__wrap__item">
+                                                                        <img src={v.pic} alt="" />
+                                                                    </div>
+                                                                    <h3 className="hot-block__list__wrap__title text-double">{v.show_name}</h3>
+                                                                </a>
+                                                            </div>
+                                                        )
+                                                    })
                                                 }
                                             </div>
                                         </div>
@@ -227,7 +260,7 @@ class Index extends Component {
                                             {
                                                 this.props.stageList.map(v => (
                                                     <div key={v.sche_id} className="eswiper-slide eswiper-slide-active">
-                                                        <a href="/#" className="category-block__list__column__wrap">
+                                                        <a href={"/ticket/"+v.sche_id} className="category-block__list__column__wrap">
                                                             <div className="category-block__list__column__item">
                                                                 <img src={v.pic} alt="" />
                                                             </div>
@@ -264,7 +297,7 @@ class Index extends Component {
                                                     key={v.schedular_id}
                                                     style={{
                                                         opacity: 1
-                                                    }} className="index-show-model__item">
+                                                    }} onClick={()=>{console.log(this)}} className="index-show-model__item">
                                                     <div className="index-falls-cell">
                                                         <div className="index-falls-cell__image">
                                                             <img src={v.pic} alt="" />
@@ -345,7 +378,6 @@ class Index extends Component {
         )
     }
     getHW(data) {
-        console.log(data)
         let leftDate = [];
         let rightDate = [];
         data.forEach((item, index) => {
@@ -364,7 +396,43 @@ class Index extends Component {
             rightDate
         })
     }
+    async getShowList(city_id = 0) {
+        this.page += 1
+        const { data } = await this.$axios.get("/Show/Search/getShowList", {
+            params: {
+                city_id: 0,
+                page: this.page
+            }
+        })
+        this.setState({
+            data: [
+                ...this.state.data,
+                ...data.list
+            ]
+        }, () => {
+            this.getHW(this.state.data)
+        })
+
+    }
     async componentDidMount() {
+        this.getShowList()
+        window.addEventListener('scroll', async function (e) {
+            const { scrollHeight, clientHeight } = e.target.body;
+            let isBottom = (window.scrollY + clientHeight + 40) > scrollHeight;
+            // let isAxios = false;
+            if (isBottom) {
+                isBottom = false;
+                // this.isAxios = true;
+                setTimeout(() => {
+                    this.getShowList()
+                }, 2000)
+                // if (isAxios) {
+                //     console.log(1111111111111111)
+                //     isAxios = false;
+
+                // }
+            }
+        }.bind(this), false);
         new Swiper('.swiper1', {
             loop: true,
             autoplay: true,
@@ -387,12 +455,6 @@ class Index extends Component {
             observer: true,
             observeParents: true,
         });
-        const showList = await this.$axios.get("/Show/Search/getShowList", {
-            params: {
-                city_id: 0,
-                page: 1
-            }
-        })
         const { data } = await this.$axios.get("/home/index/getClassifyHome", {
             params: {
                 city_id: 0
@@ -401,22 +463,19 @@ class Index extends Component {
         this.setState({
             classify_list: data.classify_list,
             slide_list: data.slide_list,
-            data: showList.data.list
-        }, () => {
-            this.getHW(this.state.data)
         })
         this.props.getHotList();
         this.props.getFloorList();
-        this.props.getSwiperList();
+        // this.props.getSwiperList();
         this.props.getDiscountList()
     }
 }
 function mapStateToProps(state) {
-    console.log(state)
+    // console.log(state)
     return {
         hot_list: state.homeReducer.hot_list,
         stageList: state.homeReducer.stageList,
-        swiperList: state.homeReducer.swiperList,
+        // swiperList: state.homeReducer.swiperList,
         discountList: state.homeReducer.discountList
     }
 }
@@ -428,9 +487,9 @@ function mapDisapatchToProps(dispatch) {
         getFloorList() {
             dispatch(homeActionCreator.getFloorShowList.call())
         },
-        getSwiperList() {
-            dispatch(homeActionCreator.getSwiperPics.call())
-        },
+        // getSwiperList() {
+        //     dispatch(homeActionCreator.getSwiperPics.call())
+        // },
         getDiscountList() {
             dispatch(homeActionCreator.getDiscountList.call())
         }
