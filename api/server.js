@@ -4,13 +4,20 @@ const md5 = require("md5-node")
 const bodyParser = require("body-parser")
 const vertify = require("./login/vertify")
 const { encode, decode } = require("./module/tools")
-// const fs = require("fs")
-// const stringRandom = require("string-random")
+const fs = require("fs")
+
 const app = express()
+app.use(express.static(__dirname + "/dataBase"))
 app.use(bodyParser.json())
 const key = "@$%&*****"
 // 获得图形验证码
 app.get("/get-img-verify", vertify.getImgVertify)
+// 验证手机注册图形验证码
+app.get("/sendMobileLoginSms", vertify.checkImgVertify)
+// 获取手机验证码
+app.get("/getPhoneCode", vertify.getPhoneCode)
+// 验证手机验证码
+app.get("/sendPhoneCode", vertify.sendPhoneCode)
 // 验证图形验证码
 app.get("/sendVerifyCode", (req, res) => {
   const captchaReq = md5(req.query.vertifyCode.toLowerCase())
@@ -25,21 +32,7 @@ app.get("/sendVerifyCode", (req, res) => {
   //   userType: "mobile",
   // })
 })
-// 验证手机注册图形验证码
-app.get("/sendMobileLoginSms", (req, res) => {
-  const captchaReq = md5(req.query.captcha.toLowerCase())
-  if (req.query.gid === captchaReq) {
-    const captchaText = Math.floor(Math.random() * 10000)
-    res.json({
-      ok: 1,
-      msg: "发送手机验证码",
-      captchaText,
-      token: encode({ userName: req.query.mobile, type: "mobile" }),
-    })
-  } else {
-    res.json({ ok: -1, msg: "验证码错误" })
-  }
-})
+
 // app.all("*", (req, res, next) => {
 //   const token = req.headers.authorization
 //   const { ok, msg, info } = decode(token)

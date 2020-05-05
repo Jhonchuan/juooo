@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import '../../assets/style/theatre/index.css'
+import React, { Component } from "react"
+import "../../assets/style/theatre/index.css"
 export default class TheatreList extends Component {
     render() {
         return (
@@ -417,7 +417,6 @@ export default class TheatreList extends Component {
                         </div>
                     </div>
                 </div>
-
             </div>
         )
     }

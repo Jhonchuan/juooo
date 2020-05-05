@@ -8,7 +8,8 @@ class Dialog extends Component {
   confirm = () => {
     this.props.CLOSE_DIALOG()
     this.props.handleClick()
-    if (this.props.closeAlert) this.props.closeAlert()
+    if (this.props.closeFuction) this.props.closeFuction()
+    // if (this.props.closeAlert) this.props.closeAlert()
   }
   close = e => {
     const buttons = document.querySelectorAll(".button")

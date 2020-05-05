@@ -26,28 +26,17 @@ class Register extends Component {
       document.querySelector(".login__cnt__pwd__btn__login") ||
       document.querySelector(".login__cnt__pwd__btn__login_active")
     const mobNum = /^1[3456789]\d{9}$/
-    if (mobNum.test(this.userName.value) && this.capcha.value) {
+    const mail = new RegExp(
+      "^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"
+    )
+    if (
+      ((mobNum.test(this.userName.value) && !this.state.isEmail) ||
+        (mail.test(this.userName.value) && this.state.isEmail)) &&
+      this.capcha.value
+    ) {
       button.className = "login__cnt__pwd__btn__login_active"
     } else {
       button.className = "login__cnt__pwd__btn__login"
-    }
-  }
-  async submit(e) {
-    if (e.target.className === "login__cnt__pwd__btn__login_active") {
-      const data = await axios.get("/api/sendMobileLoginSms", {
-        params: {
-          mobile: this.userName.value,
-          captcha: this.capcha.value,
-          gid: this.props.captchaCode,
-        },
-      })
-      if (data.ok === 1) {
-        document.cookie = `token=${data.token}`
-        window.location.href = `/passport/verify?step=1&type=mobile&userName=${this.userName.value}&gid=${this.props.captchaCode}`
-      } else {
-        document.querySelector(".error_msg").innerHTML = data.msg
-        this.props.getCapcha(this.capchaImg)
-      }
     }
   }
   async componentDidMount() {
@@ -89,7 +78,6 @@ class Register extends Component {
     const email = (
       <div className="logo_cnt_pwd_input">
         <div className="logo_cnt_pwd_input_item">
-          <span className="register__prefix">+86</span>
           <input
             ref={e => (this.userName = e)}
             type="text"
@@ -138,7 +126,15 @@ class Register extends Component {
               <div className="login__cnt__pwd__btn">
                 <div
                   className="login__cnt__pwd__btn__login"
-                  onClick={e => this.submit.call(this, e)}
+                  onClick={e =>
+                    this.props.submit(
+                      e,
+                      this.userName.value,
+                      this.capcha.value,
+                      this.capchaImg,
+                      this.state.isEmail
+                    )
+                  }
                 >
                   下一步
                 </div>
