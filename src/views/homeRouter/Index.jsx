@@ -1,7 +1,6 @@
 import React, { Component, useRef } from 'react'
 import "../../assets/style/home/index.css"
 import IndexHeader from "../../components/common/IndexHeader"
-<<<<<<< HEAD
 import { connect } from "react-redux"
 import homeActionCreator from "../../store/actionCreator/Home/index"
 import Swiper from "swiper"
@@ -17,9 +16,6 @@ class Index extends Component {
             rightDate: []
         }
     }
-=======
-export default class Index extends Component {
->>>>>>> wxa
     render() {
         return (
             <div className={"home_page"}>
@@ -41,7 +37,7 @@ export default class Index extends Component {
                         <div style={{
                             padding: "1.37333rem 0.4rem 0",
                         }}>
-                            <div className="swiper-container" style={{
+                            <div className="swiper-container swiper1" style={{
                                 height: "3.73333rem",
                                 borderRadius: "0.16rem"
                             }}>
@@ -53,7 +49,6 @@ export default class Index extends Component {
                                             </div>
                                         ))
                                     }
-
                                 </div>
                                 <div className="swiper-pagination"></div>
                             </div>
@@ -63,7 +58,10 @@ export default class Index extends Component {
                             <div className="index_labelItem">
                                 {
                                     this.state.classify_list.map(v => (
-                                        <div key={v.id} className="item">
+                                        <div key={v.id} style={{
+                                            width: "20%",
+                                            marginBottom: "0.29333rem"
+                                        }}>
                                             <a className="label-item__block__column" href="/#">
                                                 <img className="label-item__block__column__icon" src={v.pic} alt="" />
                                                 <span className="label-item__block__column__title">{v.name}</span>
@@ -86,7 +84,7 @@ export default class Index extends Component {
                                     </div>
                                 </a>
                                 <div className="vip_ahead_eswiper">
-                                    <div className="swiper-container">
+                                    <div className="swiper-container swiper2">
                                         <div className="swiper-wrapper">
                                             {
                                                 this.props.discountList.map(v => (
@@ -96,9 +94,9 @@ export default class Index extends Component {
                                                                 <a href="/#"><img src={v.pic} alt="" /></a>
                                                             </div>
                                                             <div className="vip-ahead__list__info">
-                                                <a href="/ticket/114166"><h3 className="vip-ahead__list__info__title text-double">{v.schedular_name}</h3></a>
+                                                                <a href="/ticket/114166"><h3 className="vip-ahead__list__info__title text-double">{v.schedular_name}</h3></a>
                                                                 <p className="vip-ahead__list__info__tip item-discount">
-                                                <span className="item-discount__num c_ff6">{v.min_discount}</span>
+                                                                    <span className="item-discount__num c_ff6">{v.min_discount}</span>
                                                                     <span className="vip-ahead__list__info__tip__text">折起</span>
                                                                 </p>
                                                             </div>
@@ -111,11 +109,8 @@ export default class Index extends Component {
                                             }
 
                                         </div>
-                                        <div className="vip-pagination">
-                                            <span className="eswiper-pagination-bullet eswiper-pagination-bullet-active"></span>
-                                            <span className="eswiper-pagination-bullet"></span>
-                                            <span className="eswiper-pagination-bullet"></span>
-                                        </div>
+
+                                        <div className="swiper-pagination"></div>
                                     </div>
                                 </div>
                             </section>
@@ -128,7 +123,6 @@ export default class Index extends Component {
                                 <IndexHeader title={"热门演出"}></IndexHeader>
                                 <section>
                                     <div className="hot-block__list hot-list">
-<<<<<<< HEAD
                                         <div className="eswiper-container eswiper-container-horizontal">
                                             <div className="eswiper-wrapper">
                                                 {
@@ -143,97 +137,6 @@ export default class Index extends Component {
                                                         </div>
                                                     ))
                                                 }
-=======
-                                        <div className="swiper-container swiper-container-horizontal">
-                                            <div className="swiper-wrapper">
-                                                <div className="swiper-slide swiper-slide-active">
-                                                    <a className="hot-block__list__wrap" href="">
-                                                        <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
-                                                        </div>
-                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
-                                                    </a>
-                                                </div>
-                                                <div className="swiper-slide swiper-slide-next">
-                                                    <a className="hot-block__list__wrap" href="">
-                                                        <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
-                                                        </div>
-                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
-                                                    </a>
-                                                </div>
-                                                <div className="swiper-slide">
-                                                    <a className="hot-block__list__wrap" href="">
-                                                        <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
-                                                        </div>
-                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
-                                                    </a>
-                                                </div>
-                                                <div className="swiper-slide">
-                                                    <a className="hot-block__list__wrap" href="">
-                                                        <div className="hot-block__list__wrap__item">
-                                                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/>
-                                                        </div>
-                                                        <h3 className="hot-block__list__wrap__title text-double">2020第七届城市戏剧节 《涂红》-石家庄站</h3>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                        <div className="index-tour-wrap">
-                            <div className="blockContent">
-                                <IndexHeader title={"巡回演出"}></IndexHeader>
-                                <div className="tour-wrap__info">
-                                    <div className="tour-block">
-                                        <div className="tour-container">
-                                            <div className="tour-info">
-                                                <div className="tour-block__item">
-                                                    <div className="ju-schedule-cell-wrapper middle">
-                                                        <div className="ju-schedule-cell">
-                                                            <div className="ju-schedule-cell__cover">
-                                                                <div className="image ju-schedule-cell__cover__img"><img src="https://image.juooo.com/group1/M00/04/3E/rAoKNV59rlWAUODrAABlWN_fCvM347.jpg" alt=""/></div>
-                                                            </div>
-                                                            <div className="ju-schedule-cell__info">
-                                                                <div className="ju-schedule-cell__info__date-week">
-                                                                    <span className="ju-schedule-cell__info__date-week__date"></span>
-                                                                    <span className="ju-schedule-cell__info__date-week__week">2020.08.13 - 10.03</span>
-                                                                </div>
-                                                                <div className="ju-schedule-cell__info__name">
-                                                                    <div className="ju-schedule-cell__info__name__content ">聚橙制作 | 法语音乐剧《摇滚红与黑》</div>
-                                                                </div>
-                                                                <div className="ju-schedule-cell__info__place"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="tour-block__item__bottom">
-                                                        <p className="tour-block__item__bottom__price">
-                                                            <span className="tour-block__item__bottom__price--price">￥</span>
-                                                            <span className="tour-block__item__bottom__price--price">80</span>
-                                                            <span className="tour-block__item__bottom__price--tips">起</span>
-                                                        </p>
-                                                        <div className="tour-block__item__bottom__citys"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="index-category-block index-category-wrap"></div>
-                        <div className="index-model-block">
-                            <h3 className="model-block__title">为你推荐</h3>
-                            <div className="index-show-model">
-                                <div className="index-show-model__main">
-                                    <div className="index-show-model__item">
-                                        <div className="index-falls-cell">
-                                            <div className="index-falls-cell__image">
-                                                <img src="https://image.juooo.com/group1/M00/03/25/rAoKmV2f3-yADPouAACAMESBbK8067.jpg" alt="" />
->>>>>>> wxa
                                             </div>
                                         </div>
                                     </div>
@@ -353,7 +256,7 @@ export default class Index extends Component {
                                         style={{
                                             position: "absolute",
                                             left: 0,
-                                            height:500
+                                            height: 500
                                         }} className="left">
                                         {
                                             this.state.leftDate.map(v => (
@@ -438,7 +341,7 @@ export default class Index extends Component {
                         </div>
                     </section>
                 </main>
-            </div>
+            </div >
         )
     }
     getHW(data) {
@@ -462,11 +365,24 @@ export default class Index extends Component {
         })
     }
     async componentDidMount() {
-        new Swiper('.swiper-container', {
+        new Swiper('.swiper1', {
             loop: true,
             autoplay: true,
             pagination: {
                 el: '.swiper-pagination',
+                bulletClass: "eswiper-pagination-bullet2",
+                bulletActiveClass: "eswiper-pagination-bullet-active2"
+            },
+            observer: true,
+            observeParents: true,
+        });
+        new Swiper('.swiper2', {
+            loop: true,
+            autoplay: true,
+            pagination: {
+                el: '.swiper-pagination',
+                bulletClass: "eswiper-pagination-bullet",
+                bulletActiveClass: "eswiper-pagination-bullet-active"
             },
             observer: true,
             observeParents: true,

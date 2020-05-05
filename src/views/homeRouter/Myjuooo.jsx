@@ -9,11 +9,7 @@ export default class Myjuooo extends Component {
                 <div className="my-minebody">
                     <div className="my-mine-info mine-info">
                         <div className="my-mine-info__icon">
-<<<<<<< HEAD
                             <a href="/#"><i className="iconfont icon-sangedian"></i></a>
-=======
-                            <a href=""><i className="iconfont icon-sangedian"></i></a>
->>>>>>> wxa
                         </div>
                         <div className="mine-info__main">
                             <div className="mine-info__main__head">
@@ -41,22 +37,14 @@ export default class Myjuooo extends Component {
                                     <p className="mine-info__main__cnt__item__num">0</p>
                                     <p className="mine-info__main__cnt__item__name">优惠券</p>
                                 </div>
-<<<<<<< HEAD
                                 <a href="/plus/index" className="mine-info__main__cnt__item mine-info__main__cnt__plus">
-=======
-                                <a href="" className="mine-info__main__cnt__item mine-info__main__cnt__plus">
->>>>>>> wxa
                                     <p className="mine-info__main__cnt__item__num mine-info__main__cnt__item__num--no">立即开通</p>
                                     <p className="mine-info__main__cnt__item__name">橙PLUS卡</p>
                                 </a>
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
                     <a className="my-mine-vip" href="/#">
-=======
-                    <a className="my-mine-vip" href="">
->>>>>>> wxa
                         <img src="https://m.juooo.com/static/img/ad.411f5e6.png" alt="" />
                     </a>
                     <div className="my-mine-setting">
@@ -101,11 +89,7 @@ export default class Myjuooo extends Component {
                             </li>
                             {/* ***************** */}
                             <li className="mine-setting__list__item">
-<<<<<<< HEAD
                                 <a href="/#" className="mine-setting__list__item--link">
-=======
-                                <a className="mine-setting__list__item--link">
->>>>>>> wxa
                                     <i className="icon icon-help"></i>
                                     <p className="mine-setting__list__item__name mine-setting__list__item__name--active">客服帮助</p>
                                 </a>

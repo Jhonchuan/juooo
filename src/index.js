@@ -8,7 +8,6 @@ import store from "./store/index"
 import "lib-flexible"
 import axios from "axios"
 
-<<<<<<< HEAD
 React.Component.prototype.$axios = axios;
 axios.interceptors.request.use(config=>{
   config.url = "/orange"+config.url
@@ -16,14 +15,6 @@ axios.interceptors.request.use(config=>{
 })
 axios.interceptors.response.use(({data})=>{
   return data;
-=======
-// axios.interceptors.request.use(config=>{
-//   config.url = "/orange"+config.url
-//   return config
-// })
-axios.interceptors.response.use(({ data }) => {
-  return data
->>>>>>> wxa
 })
 
 ReactDOM.render(

@@ -184,19 +184,11 @@
     background-size: 100%;
     margin-left: 0.13333rem;
 }
-<<<<<<< HEAD
 .vip_ahead_eswiper {
     padding: 0 0.4rem 0px;
     height: 2.85333rem;
 }
 .vip_ahead_eswiper .eswiper-container {
-=======
-.vip_ahead_swiper {
-    padding: 0 0.4rem 0px;
-    height: 2.85333rem;
-}
-.vip_ahead_swiper .swiper-container {
->>>>>>> wxa
     width: 100%;
     padding-top: 0.4rem;
     border-top: 1px solid #f7eada;
@@ -208,11 +200,7 @@
     list-style: none;
     z-index: 1;
 }
-<<<<<<< HEAD
 .vip_ahead_eswiper .eswiper-container .eswiper-wrapper {
-=======
-.vip_ahead_swiper .swiper-container .swiper-wrapper {
->>>>>>> wxa
     position: relative;
     width: 100%;
     height: 100%;
@@ -220,11 +208,7 @@
     display: flex;
     transition-property: transform, -webkit-transform;
 }
-<<<<<<< HEAD
 .vip_ahead_eswiper .eswiper-container .eswiper-wrapper .eswiper-slide-duplicate {
-=======
-.vip_ahead_swiper .swiper-container .swiper-wrapper .swiper-slide-duplicate {
->>>>>>> wxa
     height: 100%;
     position: relative;
     transition-property: transform, -webkit-transform;
@@ -313,11 +297,23 @@
     transform: translate3d(0, 0, 0);
     z-index: 10;
 }
-<<<<<<< HEAD
+.eswiper-pagination-bullet2{
+    display: inline-block;
+    background-color: #fff;
+    width: 0.13333rem;
+    height: 0.13333rem;
+    border-radius: 50%;
+    opacity: 0.3;
+    margin-right: 0.16rem;
+}
+.eswiper-pagination-bullet-active2 {
+    display: inline-block;
+    opacity: 1;
+    width: 0.34667rem;
+    height: 0.13333rem;
+    border-radius: 0.06667rem;
+}
 .eswiper-pagination-bullet {
-=======
-.swiper-pagination-bullet {
->>>>>>> wxa
     display: inline-block;
     background-color: #ff6743;
     width: 0.13333rem;
@@ -326,14 +322,11 @@
     opacity: 0.3;
     margin-right: 0.16rem;
 }
-<<<<<<< HEAD
 .eswiper-pagination-bullet-active {
-=======
-.swiper-pagination-bullet-active {
->>>>>>> wxa
     display: inline-block;
     opacity: 1;
     width: 0.34667rem;
+    height: 0.13333rem;
     border-radius: 0.06667rem;
 }
 .index_advertise {
@@ -378,10 +371,6 @@
     position: relative;
 }
 .index-show-model__item {
-<<<<<<< HEAD
-=======
-    position: absolute;
->>>>>>> wxa
     width: 4.52rem;
     transition: all 1s;
     /**********************/
@@ -482,28 +471,16 @@
 /* .hot-list{
     margin-top: 0.4rem
 } */
-<<<<<<< HEAD
 .eswiper-container {
     margin-left: auto;
     margin-right: auto;
     position: relative;
     overflow-x: auto;
-=======
-.swiper-container {
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    overflow: hidden;
->>>>>>> wxa
     list-style: none;
     padding: 0;
     z-index: 1;
 }
-<<<<<<< HEAD
 .eswiper-wrapper {
-=======
-.swiper-wrapper {
->>>>>>> wxa
     position: relative;
     width: 100%;
     height: 100%;
@@ -514,11 +491,7 @@
     transition-duration: 0ms;
     transform: translate3d(0px, 0px, 0px);
 }
-<<<<<<< HEAD
 .eswiper-slide {
-=======
-.swiper-slide {
->>>>>>> wxa
     width: 200.47px;
     margin-right: 16px;
     height: 100%;
@@ -675,7 +648,6 @@
     height: 0.53333rem;
     line-height: 0.53333rem;
 }
-<<<<<<< HEAD
 .tour-block__item__bottom__price--price {
     color: #ff6743;
     font-size: 0.42667rem;
@@ -684,15 +656,12 @@
     color: #999;
     font-size: 0.32rem;
 }
-=======
->>>>>>> wxa
 .tour-block__item__bottom__citys {
     border-top: 1px solid rgba(204, 204, 204, 0.5);
     display: flex;
     padding-top: 0.2rem;
     margin-top: 0.26667rem;
 }
-<<<<<<< HEAD
 .tour-block__item__bottom__citys__left {
     color: #999;
     font-size: 0.32rem;
@@ -837,7 +806,3 @@
     color: #ff6743 !important;
 }
 /**************************/
-=======
-
-/******************舞台剧********************************************/
->>>>>>> wxa
