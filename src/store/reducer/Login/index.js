@@ -8,5 +8,8 @@ export default function Login(state = LoginInit, { type, payload }) {
   if (type === LoginActionType.GET_PHONE_CAPTCHA) {
     state.phoneCaptcha = payload
   }
+  if (type === LoginActionType.CHANGE_INFO) {
+    state.info = { ...state.info, ...payload }
+  }
   return state
 }

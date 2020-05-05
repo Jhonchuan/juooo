@@ -1,25 +1,24 @@
 import React, { Component } from "react"
-export default class SetPassWord extends Component {
+import { connect } from "react-redux"
+import { bindActionCreators } from "redux"
+import LoginCreator from "../../../store/actionCreator/Login/index"
+class SetPassWord extends Component {
   constructor() {
     super()
     this.password = null
   }
   onChange() {
     const button = document.querySelector(".reset_password_btn")
-    const mail = new RegExp(
-      "^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"
-    )
-    const mobNum = /^1[3456789]\d{9}$/
-    if (
-      (mail.test(this.userName.value) || mobNum.test(this.userName.value)) &&
-      this.capcha.value
-    ) {
+    const passReg = new RegExp("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$")
+    if (passReg.test(this.password.value)) {
       button.className = "reset_password_btn"
     } else {
       button.className = "reset_password_btn disabled"
     }
   }
-  next() {}
+  next() {
+    // this.props.changeInfo({ password: this.password.value })
+  }
   render() {
     return (
       <div className="register">
@@ -43,10 +42,13 @@ export default class SetPassWord extends Component {
           onInput={this.onChange.bind(this)}
         />
         <div className="divider"></div>
+
         <div className="next-wrapper">
           <button
             className="reset_password_btn disabled"
-            onClick={this.next.bind(this)}
+            onClick={() =>
+              this.props.changeInfo({ password: this.password.value })
+            }
           >
             下一步
           </button>
@@ -55,3 +57,13 @@ export default class SetPassWord extends Component {
     )
   }
 }
+function mapStateToProps(state) {
+  return {
+    phoneCaptcha: state.login.phoneCaptcha,
+    info: state.login.info,
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(LoginCreator, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SetPassWord)
