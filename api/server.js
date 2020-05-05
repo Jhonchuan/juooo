@@ -18,7 +18,10 @@ app.get("/sendMobileLoginSms", vertify.checkImgVertify)
 app.get("/getPhoneCode", vertify.getPhoneCode)
 // 验证手机验证码
 app.get("/sendPhoneCode", vertify.sendPhoneCode)
-// 验证图形验证码
+// 更改用户信息
+app.put("/changeInfo", vertify.changeInfo)
+
+// study验证图形验证码
 app.get("/sendVerifyCode", (req, res) => {
   const captchaReq = md5(req.query.vertifyCode.toLowerCase())
   if (req.query.gid === captchaReq) console.log(true)
@@ -40,5 +43,5 @@ app.get("/sendVerifyCode", (req, res) => {
 //   else json(res, ok, msg)
 // })
 app.listen(8081, () => {
-  console.log("success")
+  console.log("5.5success")
 })

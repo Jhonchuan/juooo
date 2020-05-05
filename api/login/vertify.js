@@ -1,9 +1,8 @@
 const svgCaptcha = require("svg-captcha")
 const { encode, decode } = require("../module/tools")
-
 const fs = require("fs")
 const md5 = require("md5-node")
-const { getCode, checkCode } = require("../module/upFiles")
+const { getCode, checkCode, changedb } = require("../module/upFiles")
 module.exports = {
   getImgVertify(req, res) {
     const codeConfig = {
@@ -46,7 +45,6 @@ module.exports = {
   async sendPhoneCode(req, res) {
     const { userName, type, phoneCaptcha } = req.query
     const data = await checkCode(userName, type, phoneCaptcha)
-    console.log(data)
     if (data.ok !== -1) {
       res.json({
         ...data,
@@ -55,5 +53,12 @@ module.exports = {
     } else {
       res.json(data)
     }
+  },
+  // 更改用户信息（密码）
+  async changeInfo(req, res) {
+    const { infoToChange, info } = req.body
+    const data = await changedb(infoToChange, info)
+    if (data.ok === 1) res.json(data)
+    else res.json({ ok: -1, msg: "测试" })
   },
 }

@@ -9,7 +9,6 @@ class Dialog extends Component {
     this.props.CLOSE_DIALOG()
     this.props.handleClick()
     if (this.props.closeFuction) this.props.closeFuction()
-    // if (this.props.closeAlert) this.props.closeAlert()
   }
   close = e => {
     const buttons = document.querySelectorAll(".button")

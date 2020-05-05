@@ -13,13 +13,14 @@ class Verify extends Component {
       userName: "",
       type: "",
     }
+
     this.spacing = 60 //再次获取验证码的初始间隔秒数
     this.remainder = 0 //距离再次获取验证码的剩余秒数
     this.timer = null //定时器
     this.arr = []
     this.hrefArr = []
   }
-  checking(e) {
+  async checking(e) {
     const inps = document.querySelectorAll(".code")
     if (e.keyCode === 8) {
       for (let i = 0; i < inps.length; i++) {
@@ -51,11 +52,14 @@ class Verify extends Component {
     }
     if (this.arr.length === 4) {
       if (this.arr.every(v => (v ? true : false))) {
-        this.props.sendPhoneCode(
+        const data = await this.props.sendPhoneCode(
           this.state.type,
           this.state.userName,
           this.arr.join("")
         )
+        if (data.ok === -1) {
+          document.querySelector(".error_msg").innerHTML = "验证码错误"
+        }
       }
     }
   }
@@ -65,7 +69,6 @@ class Verify extends Component {
       .split(";")
       .map(v => v.split("="))
       .find(v => v[0].trim() === "c_end")[1]
-    console.log(addTime)
     this.timer = setInterval(() => {
       this.setState(
         { remainder: Math.ceil((addTime - Date.now()) / 1000) },
@@ -102,8 +105,11 @@ class Verify extends Component {
       }
     )
   }
-  componentWillReceiveProps() {
-    this.setState({ isDialog: true })
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.phoneCaptcha !== this.props.phoneCaptcha) {
+      this.setState({ isDialog: true })
+    }
+    console.log(this.props.info)
   }
   componentWillMount() {
     this.getCode()
@@ -119,7 +125,6 @@ class Verify extends Component {
         "验证码已发送到手机" + user_name
     }
   }
-
   render() {
     return (
       <div className="container">
@@ -151,6 +156,7 @@ class Verify extends Component {
             onKeyUp={e => this.checking.call(this, e)}
           />
         </div>
+        <div className="error_msg vertify"></div>
         {this.state.remainder ? (
           <div className="retry count-down">
             {this.state.remainder}s后重新获取验证码
@@ -172,11 +178,11 @@ class Verify extends Component {
       </div>
     )
   }
-  //注册 https://m.juooo.com/Passport/verify?step=1&type=mobile&user_name=18753880131&captcha=4887&gid=154d2cd0-8d54-11ea-b098-415a8cf6b69d
 }
 function mapStateToProps(state) {
   return {
     phoneCaptcha: state.login.phoneCaptcha,
+    info: state.login.info,
   }
 }
 function mapDispatchToProps(dispatch) {
