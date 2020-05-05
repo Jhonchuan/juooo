@@ -38,7 +38,7 @@ export default class ResetPassword extends Component {
         .find(v => RegExp("capCode=").test(v))
         .split("capCode=")
         .join("")
-      const data = await axios.get("/api/sendVerifyCode", {
+      const data = await axios.get("/api/sendMobileLoginSms", {
         params: {
           userName: this.userName.value,
           vertifyCode: this.capcha.value,

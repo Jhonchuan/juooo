@@ -5,7 +5,6 @@ import LoginCreator from "../../store/actionCreator/Login/index"
 import { Link } from "react-router-dom"
 import "../../assets/style/login/register.css"
 import Dialog from "../../components/common/Dialog"
-import axios from "axios"
 // // 引入图片
 import login_cnt_logo from "../../assets/img/login/login_logo.png"
 import qqImg from "../../assets/img/login/qq.png"
