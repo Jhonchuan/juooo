@@ -166,7 +166,7 @@ a:link, a:visited, a:hover, a:active {
     padding: 0;
     z-index: 1;
 }
-.swiper-container-android .swiper-slide, .swiper-wrapper {
+.swiper-container-android .theatre-swiper-slide, .swiper-wrapper {
     -webkit-transform: translate3d(0px, 0, 0);
     transform: translate3d(0px, 0, 0);
 }
