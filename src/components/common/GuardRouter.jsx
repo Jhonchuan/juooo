@@ -1,6 +1,7 @@
 import React, { Component } from "react"
+import {withRouter} from "react-router-dom"
 
-export default class GuardRouter extends Component {
+class GuardRouter extends Component {
   render() {
     return (
       <div>
@@ -15,3 +16,4 @@ export default class GuardRouter extends Component {
     }
   }
 }
+export default withRouter(GuardRouter)

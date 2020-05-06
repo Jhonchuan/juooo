@@ -297,7 +297,10 @@ class Index extends Component {
                                                     key={v.schedular_id}
                                                     style={{
                                                         opacity: 1
-                                                    }} onClick={()=>{console.log(this)}} className="index-show-model__item">
+                                                    }} onClick={()=>{
+                                                        console.log(v)
+                                                        this.props.history.push("/ticket/"+v.schedular_id)
+                                                    }} className="index-show-model__item">
                                                     <div className="index-falls-cell">
                                                         <div className="index-falls-cell__image">
                                                             <img src={v.pic} alt="" />
@@ -415,6 +418,7 @@ class Index extends Component {
 
     }
     async componentDidMount() {
+        console.log(this.props)
         this.getShowList()
         window.addEventListener('scroll', async function (e) {
             const { scrollHeight, clientHeight } = e.target.body;
@@ -426,11 +430,6 @@ class Index extends Component {
                 setTimeout(() => {
                     this.getShowList()
                 }, 2000)
-                // if (isAxios) {
-                //     console.log(1111111111111111)
-                //     isAxios = false;
-
-                // }
             }
         }.bind(this), false);
         new Swiper('.swiper1', {
