@@ -38,20 +38,19 @@ export default class ResetPassword extends Component {
         .find(v => RegExp("capCode=").test(v))
         .split("capCode=")
         .join("")
-      const data = await axios.get("/api/sendMobileLoginSms", {
+      const data = await axios.get("/api/resetPassword", {
         params: {
           userName: this.userName.value,
-          vertifyCode: this.capcha.value,
+          captcha: this.capcha.value,
           gid,
         },
       })
       if (data.ok === 1) {
-        window.location.href = `/passport/verify?userName=${this.userName.value}&type=${data.userType}&resetToken=${data.reset_token}&captcha=${this.capcha.value}`
+        window.location.href = `/passport/verify?step=2&type=${data.userType}&userName=${this.userName.value}&captcha=${this.capcha.value}`
       } else {
         this.capchaImg.nextSibling.innerHTML = data.msg
         this.getCapcha()
       }
-      window.location.href = `/passport/verify?type=moblile&userName=${this.userName.value}&resetToken=${data.reset_token}&captcha=${this.capcha.value}`
     }
   }
   async componentDidMount() {

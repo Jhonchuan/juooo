@@ -45,6 +45,7 @@ export default {
         } else {
           document.querySelector(".error_msg").innerHTML = data.msg
           this.getCapcha(img)
+          window.location.href = `/passport/verify?step=1&type=${type}&userName=${userName}&gid=${this.captchaCode}`
         }
       }
     }
@@ -68,10 +69,10 @@ export default {
     }
   },
   // 返回手机验证码
-  sendPhoneCode(type, userName, phoneCaptcha) {
+  sendPhoneCode(step, type, userName, phoneCaptcha) {
     return async dispatch => {
       const data = await axios.get("/api/sendPhoneCode", {
-        params: { type, userName, phoneCaptcha },
+        params: { step, type, userName, phoneCaptcha },
       })
       if (data.token) {
         document.cookie = `token=${data.token}`
@@ -82,8 +83,6 @@ export default {
       } else if (data.ok === 2) {
         // 重置token，跳转重新设置密码界面，邮箱注册成功
         window.location.href = "/passport/setPassWord"
-      } else if (data.ok === 3) {
-        // 设置token，跳转login界面，验证邮箱
       } else if (data.ok === 4) {
         // 登陆成功，跳转原页面
         window.location.href = localStorage.returnUrl || "/"

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Dialog from "./Dialog"
+import CityList from "./CityList"
 class Test extends Component {
   constructor(props) {
     super(props)
@@ -8,6 +8,7 @@ class Test extends Component {
       isDialog: false,
       isLoading: false,
       isAlert: false,
+      isCity: false,
     }
   }
   closeConfirm() {
@@ -16,50 +17,19 @@ class Test extends Component {
   closeAlert() {
     console.log(111111111)
   }
+  chooseCity = cityName => {
+    console.log(cityName)
+  }
   render() {
+    console.log(this.state.isCity)
     return (
-      <div className="Two">
-        Two
-        <button onClick={() => this.setState({ isDialog: true })}>
-          确认框
-        </button>
-        <p>
-          <button onClick={() => this.setState({ isLoading: true })}>
-            点击加载中
-          </button>
-        </p>
-        <p>
-          <button onClick={() => this.setState({ isAlert: true })}>
-            alert弹出框
-          </button>
-        </p>
-        <div>{this.state.num}</div>
-        {/* 确认框 */}
-        {this.state.isDialog ? (
-          <Dialog
-            type="confirm"
-            closeFuction={this.closeConfirm}
-            handleClick={() => this.setState({ isDialog: false })}
-          >
-            1234
-          </Dialog>
-        ) : null}
-        {/* {this.state.isDialog ? (
-          <Dialog
-            handleClick={() => this.setState({ isDialog: false })}
-          ></Dialog>
-        ) : null} */}
-        {/* 加载中 */}
-        {this.state.isLoading ? <Dialog type="loading"></Dialog> : null}
-        {/* alert弹出框 */}
-        {this.state.isAlert ? (
-          <Dialog
-            type="alert"
-            closeFuction={this.closeAlert}
-            handleClick={() => this.setState({ isAlert: false })}
-          >
-            7778899
-          </Dialog>
+      <div>
+        <button onClick={() => this.setState({ isCity: true })}>出现</button>
+        {this.state.isCity ? (
+          <CityList
+            close={() => this.setState({ isCity: false })}
+            confirm={this.chooseCity}
+          ></CityList>
         ) : null}
       </div>
     )

@@ -130,7 +130,36 @@
 .right-cell__icon--prior-buy {
   background-position: -0.12rem -3.06667rem;
 }
-
+.right-cell__icon--price {
+  background-position: -3.05333rem -3.06667rem;
+}
+.right-cell__icon--discount {
+  background-position: -4.52rem -1.6rem;
+}
+.right-cell__icon--coupon {
+  background-position: -4.52rem -0.12rem;
+}
+.right-cell__icon--free-shipping {
+  background-position: -1.58667rem -1.6rem;
+}
+.right-cell__icon--double-points {
+  background-position: -3.05333rem -1.6rem;
+}
+.right-cell__icon--free-ticket {
+  background-position: -1.58667rem -3.06667rem;
+}
+.right-cell__icon--activity {
+  background-position: -0.12rem -1.6rem;
+}
+.right-cell__icon--periodical {
+  background-position: -1.58667rem -0.12rem;
+}
+.right-cell__icon--birthday {
+  background-position: -3.05333rem -0.12rem;
+}
+.right-cell__icon--more {
+  background-position: -0.12rem -0.12rem;
+}
 .vip .right-cell__icon {
   width: 1.25333rem;
   height: 1.25333rem;
@@ -360,12 +389,12 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.payment-mode__list__checkout__icon.juooo-checkout {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAANmfvwAAAAdVBMVEUAAAD/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P+/v7+7+v+8u/+9vT+7Oj/fV7/bUn+4tv/i2//r5z+3dX/kHb/hmn/gmT/eFj/qJSn/c4uAAAAFnRSTlMAtPryYBZ+I+vLoFo97MyfWT4hfHo8LoI0IAAAAP9JREFUOMuN1NtWgzAQQNHJkEAIt7bqAGKr0ur/f6LVhFwkgZ6nPOwVsiADeAnelRJRlh0XEKtmSDZk9QoUjP7FilAcMlqVVb7IKVruxDMlerJPoWQHLU5ZmmSnP8JoI/YrXmizWm+ys41AinabLvo9C+Bx8Tb0k15x6OJi6oebXioo43tYQSVIs7rOobiSqYHltOPrhydGKwgt+ey10eKdPNKY1XkxX1MgqHHHPV/uZi2oBUW++b6LIRCkgFNglnO4OAgMTD/OoUBhPqM98zBHbkO9cxkeu1JQbF1MM0xVmlRujBLlj4yaq0oN7P7Yhx0Z+uAIsQRXrUSUrQp+QT+y/E1dJvh50gAAAABJRU5ErkJggg==);
-}
 
 .payment-mode__list__checkout__icon.juooo-success {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAANmfvwAAAATlBMVEUAAACzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7MOBwKaAAAAGnRSTlMAC+vcMxdmdz0U+vDMtLOgYFl+qNNkIqcjIXZAfWYAAADTSURBVDjLjdRZrsIwDAXQ68R2mjZJJ1pg/xt9eggo0GJy/iJZynRtvJChT65tXeoHwZGmdLOyEAnr3JVmV7Bmr7QtafF5xZvRBcIbCm7Ei8kzdthP2yKcBAfk9KwZveBQ9Pe9ro7xBbsr/uWAr0K+vYeHwTcAisKgBZCOYKBOMMwwzQN6hUl7JIapSXARpujQEkzUVpRUbPTzuJwqLl3xdBUf8Osbl1IRhrpIYbWCuT7iHa1430xmk9itVtewm0v2y0fbX46Gx1k5ApH1vBse9gj6A/4pB+aDZqm8AAAAAElFTkSuQmCC);
+}
+.payment-mode__list__checkout__icon.juooo-checkout {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAANmfvwAAAAdVBMVEUAAAD/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P/Z0P+/v7+7+v+8u/+9vT+7Oj/fV7/bUn+4tv/i2//r5z+3dX/kHb/hmn/gmT/eFj/qJSn/c4uAAAAFnRSTlMAtPryYBZ+I+vLoFo97MyfWT4hfHo8LoI0IAAAAP9JREFUOMuN1NtWgzAQQNHJkEAIt7bqAGKr0ur/f6LVhFwkgZ6nPOwVsiADeAnelRJRlh0XEKtmSDZk9QoUjP7FilAcMlqVVb7IKVruxDMlerJPoWQHLU5ZmmSnP8JoI/YrXmizWm+ys41AinabLvo9C+Bx8Tb0k15x6OJi6oebXioo43tYQSVIs7rOobiSqYHltOPrhydGKwgt+ey10eKdPNKY1XkxX1MgqHHHPV/uZi2oBUW++b6LIRCkgFNglnO4OAgMTD/OoUBhPqM98zBHbkO9cxkeu1JQbF1MM0xVmlRujBLlj4yaq0oN7P7Yhx0Z+uAIsQRXrUSUrQp+QT+y/E1dJvh50gAAAABJRU5ErkJggg==);
 }
 .payment-mode__list__checkout__icon {
   width: 0.45333rem;
