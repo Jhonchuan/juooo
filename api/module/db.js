@@ -6,7 +6,7 @@ function _connect() {
     return new Promise((reslove, reject) => {
         mongoClient.connect("mongodb://127.0.0.1:27017", { useUnifiedTopology: true }, (err, client) => {
             if (err) reject("数据库连接失败")
-            else reslove(client.db("ele"))
+            else reslove(client.db("juooo"))
         })
     })
 
@@ -62,6 +62,15 @@ module.exports = {
             db.collection(collName).deleteOne({ _id: ObjectId(id) }, (err, results) => {
                 if (err) reject("删除失败")
                 else reslove("删除成功")
+            })
+        })
+    },
+    async updateOne(collName, whereObj, upObj) {
+        const db = await _connect()
+        return new Promise((reslove, reject) => {
+            db.collection(collName).updateOne(whereObj, upObj, (err, results) => {
+                if (err) reject("更新失败")
+                else reslove("更新成功")
             })
         })
     },
