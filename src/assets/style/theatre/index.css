@@ -20,7 +20,7 @@ ul,ol,li{
 .head_nav {
     position: fixed;
     top: 0;
-    width: 10rem;
+    width: 100%;
     height: 1.17333rem;
     line-height: 1.17333rem;
     text-align: center;
@@ -65,7 +65,7 @@ ul,ol,li{
     width: 9.2rem;
     margin: 0 auto;
 }
-ul {
+/* ul {
     display: block;
     list-style-type: disc;
     margin-block-start: 1em;
@@ -73,10 +73,12 @@ ul {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;
-}
+} */
 li {
     display: list-item;
     text-align: -webkit-match-parent;
+    /* width: 345px;
+    height: 298px; */
 }
 .theater-list .theater-info-shows{
     background-color: #fefefe;
@@ -98,6 +100,42 @@ li {
     -ms-flex-align: center;
     align-items: center;
 }
+/* 图片 */
+.theater-list .theater-info-shows .theater-info .theater-pic-name-count .theater-pic-wrap{
+    width: 1.33333rem;
+    height: 1.33333rem;
+    margin-right: 0.26667rem;
+    overflow: hidden;
+}
+.theater-list .theater-info-shows .theater-info .theater-pic-name-count .theater-pic-wrap .theater-pic {
+    width: 1.33333rem;
+    vertical-align: middle;
+    border-radius: 0.10667rem;
+}
+/* 图片下文字 */
+.theater-list .theater-info-shows .theater-info .theater-pic-name-count .theater-name-count-wrap{
+    max-width: 6rem;
+}
+.theater-list .theater-info-shows .theater-info .theater-pic-name-count .theater-name-count-wrap .theater-name {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0.08rem 0 0.13333rem;
+    font-size: 0.45333rem;
+    color: #232323;
+    font-weight: bold;
+}
+.theater-name{
+    margin: 0em;
+}
+.theater-list .theater-info-shows .theater-info .theater-pic-name-count .theater-name-count-wrap .theater-count {
+    color: #666666;
+    font-size: 0.32rem;
+}
+
+
+
 .theater-list .theater-info-shows .theater-info .theater-pic-name-count{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -111,7 +149,7 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: none;
     outline: none;
 }
-.theater-list .theater-info-shows .theater-shows[data-v-2b21c040] {
+.theater-list .theater-info-shows .theater-shows{
     margin-top: 0.34667rem;
 }
 
@@ -128,7 +166,7 @@ a:link, a:visited, a:hover, a:active {
     padding: 0;
     z-index: 1;
 }
-.swiper-container-android .swiper-slide, .swiper-wrapper {
+.swiper-container-android .theatre-swiper-slide, .swiper-wrapper {
     -webkit-transform: translate3d(0px, 0, 0);
     transform: translate3d(0px, 0, 0);
 }

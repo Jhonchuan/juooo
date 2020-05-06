@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react'
 import "../assets/style/search/index.css"
 export default class Search extends Component {
@@ -59,4 +60,12 @@ export default class Search extends Component {
             </div>
         )
     }
+=======
+import React, { Component } from "react"
+
+export default class Search extends Component {
+  render() {
+    return <div>搜索/搜索列表</div>
+  }
+>>>>>>> 4539fdcb0c3082fae90e057b2a3db4b83233759d
 }

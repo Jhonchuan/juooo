@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import '../../assets/style/theatre/index.css'
+import React, { Component } from "react"
+import "../../assets/style/theatre/index.css"
 export default class TheatreList extends Component {
     render() {
         return (
@@ -20,7 +20,7 @@ export default class TheatreList extends Component {
                                                 <div className="theater-info">
                                                     <a href="" className="theater-pic-name-count">
                                                         <div className="theater-pic-wrap">
-                                                            <img src="https://image.juooo.com//group1/M00/01/D2/rAoKmVwknq2AQjJ3AABZC2s-o9o803.jpg" alt="" />
+                                                            <img className="theater-pic" src="https://image.juooo.com//group1/M00/01/D2/rAoKmVwknq2AQjJ3AABZC2s-o9o803.jpg" alt="" />
                                                         </div>
                                                         <div className="theater-name-count-wrap">
                                                             <p className="theater-name">南山文体中心</p>
@@ -49,7 +49,7 @@ export default class TheatreList extends Component {
                                                                         <p className="show-date">05月29日</p>
                                                                         <span className="dot"></span>
                                                                     </div>
-                                                                    <a href="javaScript:;" className="theater-show-pic">
+                                                                    <a href="" className="theater-show-pic">
                                                                         <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
                                                                     </a>
                                                                 </div>
@@ -58,7 +58,7 @@ export default class TheatreList extends Component {
                                                                         <p className="show-date">05月29日</p>
                                                                         <span className="dot"></span>
                                                                     </div>
-                                                                    <a href="javaScript:;" className="theater-show-pic">
+                                                                    <a href="" className="theater-show-pic">
                                                                         <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
                                                                     </a>
                                                                 </div>
@@ -67,7 +67,7 @@ export default class TheatreList extends Component {
                                                                         <p className="show-date">05月29日</p>
                                                                         <span className="dot"></span>
                                                                     </div>
-                                                                    <a href="javaScript:;" className="theater-show-pic">
+                                                                    <a href="" className="theater-show-pic">
                                                                         <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
                                                                     </a>
                                                                 </div>
@@ -76,7 +76,7 @@ export default class TheatreList extends Component {
                                                                         <p className="show-date">05月29日</p>
                                                                         <span className="dot"></span>
                                                                     </div>
-                                                                    <a href="javaScript:;" className="theater-show-pic">
+                                                                    <a href="" className="theater-show-pic">
                                                                         <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
                                                                     </a>
                                                                 </div>
@@ -85,7 +85,7 @@ export default class TheatreList extends Component {
                                                                         <p className="show-date">05月29日</p>
                                                                         <span className="dot"></span>
                                                                     </div>
-                                                                    <a href="javaScript:;" className="theater-show-pic">
+                                                                    <a href="" className="theater-show-pic">
                                                                         <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
                                                                     </a>
                                                                 </div>
@@ -94,7 +94,7 @@ export default class TheatreList extends Component {
                                                                         <p className="show-date">05月29日</p>
                                                                         <span className="dot"></span>
                                                                     </div>
-                                                                    <a href="javaScript:;" className="theater-show-pic">
+                                                                    <a href="" className="theater-show-pic">
                                                                         <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
                                                                     </a>
                                                                 </div>
@@ -103,7 +103,7 @@ export default class TheatreList extends Component {
                                                                         <p className="show-date">05月29日</p>
                                                                         <span className="dot"></span>
                                                                     </div>
-                                                                    <a href="javaScript:;" className="theater-show-pic">
+                                                                    <a href="" className="theater-show-pic">
                                                                         <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
                                                                     </a>
                                                                 </div>
@@ -114,13 +114,13 @@ export default class TheatreList extends Component {
 
                                             </div>
                                         </li>
+      
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         )
     }

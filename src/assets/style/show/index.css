@@ -1,3 +1,15 @@
+html, body, div, iframe ul, li, ol, dl, dd, dt, h1, h2, h3, h4, h5, h6, p, blockquote, pre, fieldset, form, label, legend, table, thead, tbody, tfoot, caption, tr, td, th, article, header, nav, menu, aside, section, footer, figure, figcaption, time, video, audio, mark, summary, hgroup, embed, details, canvas, del, em, i, b, u, sub, sup, code, cite, strong, big, small, address, abbr, img, a, span {
+    margin: 0;
+    padding: 0;
+}
+* {
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: 0;
+}
+div {
+    display: block;
+}
 .show_type_wrap {
     position: absolute;
 }
@@ -68,32 +80,40 @@ ul{
 }
 .show-model {
     width: 100%;
+    height: 100%;
     padding: 0 0.4rem;
     box-sizing: border-box;
+
 }
 .show-model__main {
     width: 100%;
+    height: 100%;
     position: relative;
 }
-.show-model__item
-{
+.show-model__item[data-v-74d94cf0] {
     position: absolute;
     width: 4.52rem;
+    height:5.5rem;
     transition: all 1s;
+
 }
-.falls-cell
-{
+
+.falls-cell {
     width: 4.52rem;
     border-radius: 0.16rem;
     overflow: hidden;
     background-color: #fefefe;
     border: 1px solid #ebebeb;
+    margin-top:2.5rem;
+    float: left;
 }
 .falls-cell__image {
     position: relative;
     width: 100%;
     height: 6.17333rem;
+
 }
+
 .falls-cell__image__label {
     position: absolute;
     right: 0.2rem;
@@ -110,4 +130,64 @@ ul{
     border-radius: 0.02667rem;
     color: #FEFEFE;
     font-size: 0.32rem;
+}
+.falls-cell__info {
+    padding: 0.21333rem 0.29333rem 0.29333rem;
+}
+.falls-cell__info__title {
+    position: relative;
+}
+.falls-cell__info__title__sponsor{
+    position: absolute;
+    left: 0;
+    top: 0px;
+    display: block;
+    width: 0.89333rem;
+    height: 0.45333rem;
+}
+.falls-cell__info__title__cell{
+    color: #232323;
+    font-weight: normal;
+    font-size: 0.37333rem;
+    line-height: 0.53333rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.text-space {
+    text-indent: 1rem;
+}
+.falls-cell__info__date {
+    margin-top: 0.10667rem;
+    font-size: 0.34667rem;
+    color: #666;
+    line-height: 0.53333rem;
+}
+.falls-cell__info__price{
+    margin-top: 0.10667rem;
+}
+.falls-cell__info__price--price {
+    color: #FF6743;
+    font-size: 0.42667rem;
+}
+.falls-cell__info__price__tip{
+    color: #999;
+    font-size: 0.29333rem;
+}
+.falls-cell__info__support{
+    overflow: hidden;
+    margin-top: 0.13333rem;
+}
+.falls-cell__info__support--label[data-v-59b1a1b0] {
+    display: inline-block;
+    padding: 1px 0.13333rem;
+    background-color: #fff1ef;
+    border-radius: 0.22667rem;
+    color: #FF6743;
+    font-size: 0.29333rem;
+    margin-right: 0.13333rem;
+    margin-bottom: 0.13333rem;
 }

@@ -5,7 +5,10 @@ import ThreaterDetail from "../views/ThreaterDetail"
 import Ticket from "../views/Ticket"
 import Vip from "../views/Vip"
 import homeRouter from "./homeRouter/index"
-import Login from "../views/my/Login"
+import Login from "../views/my/login/Login"
+import ResetPassword from "../views/my/login/ResetPassword"
+import SetPassWord from "../views/my/login/SetPassWord"
+import Verify from "../views/my/login/Verify"
 import Register from "../views/my/Register"
 import Search from "../views/Search"
 import MySecurity from "../views/my/MySecurity"
@@ -24,7 +27,7 @@ export default [
     component: ThreaterDetail,
   },
   {
-    path: "/ticket",
+    path: "/ticket/:id",
     component: Ticket,
   },
   {
@@ -38,6 +41,18 @@ export default [
   {
     path: "/passport/login",
     component: Login,
+  },
+  {
+    path: "/passport/resetPassword",
+    component: ResetPassword,
+  },
+  {
+    path: "/passport/verify",
+    component: Verify,
+  },
+  {
+    path: "/passport/setPassWord",
+    component: SetPassWord,
   },
   {
     path: "/Passport/register",

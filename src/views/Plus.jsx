@@ -22,7 +22,7 @@ export default class Plus extends Component {
                                     <span className="plus__no__info__center__hint--2">年</span>
                                     <span className="plus__no__info__center__hint--3">尊享10大权益</span>
                                 </div>
-                                <a href="" className="plus__no__btn__rule">使用规则</a>
+                                <a href="/#" className="plus__no__btn__rule">使用规则</a>
                             </div>
                         </div>
                         <div className="plus__no__btn">

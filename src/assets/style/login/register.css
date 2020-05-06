@@ -1,0 +1,21 @@
+.register {
+  width: 100%;
+  height: 100%;
+  min-height: 16rem;
+  background-color: #fefefe;
+  position: relative;
+}
+.register__prefix {
+  font-size: 0.42667rem;
+  color: #ff6743;
+  padding-right: 0.21333rem;
+}
+.register .captcha-wrapper {
+  border-bottom: 0.013333rem solid #999999;
+  padding-left: 0;
+}
+.register__cnt__code__input__hint {
+  padding-top: 0.4rem;
+  color: #999999;
+  font-size: 0.32rem;
+}
