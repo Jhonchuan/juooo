@@ -16,8 +16,8 @@ export default class Myjuooo extends Component {
                                 <div className="mine-info__main__head__pic mine-info__main__head__pic--no">
                                     <img src="https://m.juooo.com/static/img/logo-user.8413cbf.png" alt="" />
                                 </div>
-                                <span className="mine-info__main__head__name mine-info__main__head__login">登录/注册</span>
-                                <span className="mine-info__main__head__uid">请点击登录<i className="iconfont icon-left"></i></span>
+                                <span onClick={()=>{this.props.history.push("/passport/login")}} className="mine-info__main__head__name mine-info__main__head__login">登录/注册</span>
+                                <span onClick={()=>{this.props.history.push("/passport/login")}} className="mine-info__main__head__uid">请点击登录<i className="iconfont icon-left"></i></span>
                             </div>
                             <div className="mine-info__main__label">
                                 <p className="mine-info__main__label__name mine-info__main__label__name--no">
