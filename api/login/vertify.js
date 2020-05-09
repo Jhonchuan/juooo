@@ -4,6 +4,7 @@ const fs = require("fs")
 const md5 = require("md5-node")
 const { getCode, checkCode, changedb, find } = require("../module/upFiles")
 module.exports = {
+  // 登录
   async login(req, res) {
     const { userName, password } = req.query
     find("mobile", { userName, password }, (err, result) => {
@@ -12,11 +13,19 @@ module.exports = {
           if (err) {
             res.json({ ok: -1, msg: err })
           } else {
-            res.json({ ok: 1, msg: "登陆成功" })
+            res.json({
+              ok: 1,
+              msg: "登陆成功",
+              token: encode({ userName, type: "email" }),
+            })
           }
         })
       } else {
-        res.json({ ok: 1, msg: "登陆成功" })
+        res.json({
+          ok: 1,
+          msg: "登陆成功",
+          token: encode({ userName, type: "mobile" }),
+        })
       }
     })
   },
@@ -100,7 +109,7 @@ module.exports = {
     if (data.ok !== -1) {
       res.json({
         ...data,
-        token: encode({ userName: req.query.mobile, type: "mobile" }),
+        token: encode({ userName, type }),
       })
     } else {
       res.json(data)

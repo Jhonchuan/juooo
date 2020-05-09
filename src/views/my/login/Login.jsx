@@ -49,8 +49,9 @@ export default class Login extends Component {
         },
       })
       if (data.ok === 1) {
+        document.cookie = `juooo_token=${data.token};path=/`
+        document.cookie = `userName=${this.userName.value};path=/`
         window.location.href = localStorage.returnUrl || ""
-        document.cookie = `token=${data.token}`
       } else this.setState({ isConfirm: true })
     }
   }

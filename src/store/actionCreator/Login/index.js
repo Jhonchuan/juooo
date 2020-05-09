@@ -40,7 +40,6 @@ export default {
           },
         })
         if (data.ok === 1) {
-          document.cookie = `token=${data.token}`
           window.location.href = `/passport/verify?step=1&type=${type}&userName=${userName}&gid=${this.captchaCode}`
         } else {
           document.querySelector(".error_msg").innerHTML = data.msg
@@ -75,7 +74,8 @@ export default {
         params: { step, type, userName, phoneCaptcha },
       })
       if (data.token) {
-        document.cookie = `token=${data.token}`
+        document.cookie = `juooo_token=${data.token};path=/`
+        document.cookie = `userName=${userName};path=/`
       }
       if (data.ok === 1) {
         //手机注册成功 设置token，跳转首页

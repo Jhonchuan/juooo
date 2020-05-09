@@ -29,9 +29,13 @@ module.exports = {
         if (err) return cb("文件读取错误", [])
         var person = data.toString()
         person = JSON.parse(person)
-        if (where(person[colName], whereObj).length <= 0)
-          return cb("找不到该数据", [])
-        else return cb("", where(person[colName], whereObj))
+        if (Object.keys(whereObj).length === 0) {
+          return cb("", person[colName])
+        } else {
+          if (where(person[colName], whereObj).length <= 0)
+            return cb("找不到该数据", [])
+          else return cb("", where(person[colName], whereObj))
+        }
       })
     })
   },
@@ -42,7 +46,7 @@ module.exports = {
         var person = data.toString() //将二进制的数据转换为字符串
         person = JSON.parse(person) //将字符串转换为json对象
         const params = { id: Date.now() + stringRandom(10), ...insertObj }
-        person[colName].push(params) //将传来的对象push进数组对象中
+        person[colName].unshift(params) //将传来的对象push进数组对象中
         var str = JSON.stringify(person) //因为nodejs的写入文件只认识字符串或者二进制数，所以把json对象转换成字符串重新写入json文件中
         fs.writeFile("./dataBase/db.json", str, function (err) {
           if (err) return cb("文件插入错误", [])

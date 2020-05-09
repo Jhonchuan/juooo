@@ -4,6 +4,7 @@ const md5 = require("md5-node")
 const bodyParser = require("body-parser")
 const vertify = require("./login/vertify")
 const { encode, decode } = require("./module/tools")
+const { find, insertOne } = require("./module/mydb")
 const fs = require("fs")
 const db = require("./module/db")
 
@@ -25,22 +26,10 @@ app.get("/sendPhoneCode", vertify.sendPhoneCode)
 app.put("/changeInfo", vertify.changeInfo)
 // 重设密码信息检查
 app.get("/resetPassword", vertify.resetPassword)
-// study验证图形验证码
-app.get("/sendVerifyCode", (req, res) => {
-  const captchaReq = md5(req.query.vertifyCode.toLowerCase())
-  if (req.query.gid === captchaReq) console.log(true)
-  res.json({
-    ok: -1,
-    msg: "测试",
-  })
-  res.json({
-    ok: 1,
-    reset_token: "",
-    userType: "mobile",
-  })
-})
+// 加入购物车王新爱版本
 app.post("/addCart", async (req, res) => {
   const {
+    userName,
     showId,
     showTitle,
     showPic,
@@ -50,44 +39,84 @@ app.post("/addCart", async (req, res) => {
     showThreater,
     showPrice,
   } = req.body
-  const showInfo = await db.findOne("cartList", {
-    showId,
-  })
-  if (showInfo) {
-    //已经买过
-    await db.updateOne(
-      "cartList",
-      { showId },
-      {
-        $inc: {
-          buyNum: 1,
+  find("cartList", { showId, userName }, (err, results) => {
+    if (results.length > 1) {
+      res.json({ ok: -1, msg: "您已购买该票，不得重复购买" })
+    } else {
+      insertOne(
+        "cartList",
+        {
+          userName,
+          showId,
+          showTitle,
+          showPic,
+          startDate,
+          startTime,
+          showCity,
+          showThreater,
+          showPrice,
         },
-      }
-    )
-  } else {
-    await db.insertOne("cartList", {
-      showId,
-      showTitle,
-      showPic,
-      startDate,
-      startTime,
-      showCity,
-      showThreater,
-      showPrice,
-      buyNum: 1,
-    })
-  }
-  res.json({
-    ok: 1,
-    msg: "加入购物车成功",
+        (error, result) => {
+          res.json({
+            ok: 1,
+            msg: "加入购物车成功",
+          })
+        }
+      )
+    }
   })
 })
-// app.all("*", (req, res, next) => {
-//   const token = req.headers.authorization
-//   const { ok, msg, info } = decode(token)
-//   if (ok === 3) next()
-//   else json(res, ok, msg)
+// 加入购物车组长版本
+// app.post("/addCart", async (req, res) => {
+//   const {
+//     showId,
+//     showTitle,
+//     showPic,
+//     startDate,
+//     startTime,
+//     showCity,
+//     showThreater,
+//     showPrice,
+//   } = req.body
+//   const showInfo = await db.findOne("cartList", {
+//     showId,
+//   })
+//   if (showInfo) {
+//     //已经买过
+//     await db.updateOne(
+//       "cartList",
+//       { showId },
+//       {
+//         $inc: {
+//           buyNum: 1,
+//         },
+//       }
+//     )
+//   } else {
+//     await db.insertOne("cartList", {
+//       showId,
+//       showTitle,
+//       showPic,
+//       startDate,
+//       startTime,
+//       showCity,
+//       showThreater,
+//       showPrice,
+//       buyNum: 1,
+//     })
+//   }
+//   res.json({
+//     ok: 1,
+//     msg: "加入购物车成功",
+//   })
 // })
+// 获取购物车列表
+app.get("/getCar", (req, res) => {
+  const { userName } = req.query
+  find("cartList", { userName }, (err, result) => {
+    res.json({ ok: 1, msg: "获得信息成功", result })
+  })
+})
 app.listen(8081, () => {
   console.log("5.5success")
 })

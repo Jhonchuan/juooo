@@ -1,9 +1,92 @@
 import React, { Component } from "react"
 import "../../assets/style/Eticket/index.css"
 import ticket_empty from "../../assets/img/Eticket/ticket_empty.png"
+import axios from "axios"
 export default class Eticket extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLogin: false,
+      list: [],
+    }
+  }
+  async componentWillMount() {
+    const ifToken = document.cookie
+      .split(";")
+      .find(v => v.split("=")[0].trim() === "juooo_token")
+    if (ifToken) {
+      const userName = document.cookie
+        .split(";")
+        .find(v => v.split("=")[0].trim() === "userName")
+        .split("=")[1]
+      this.setState({ isLogin: true })
+      const data = await axios.get("/api/getCar", { params: { userName } })
+      this.setState({ list: data.result })
+    }
+  }
+
   render() {
-    console.log()
+    // 票夹列表
+    const ticketList = (
+      <div className="ticket-list__content">
+        <div className="load-more">
+          <div className="ticket-list__list">
+            {this.state.list.map(v => (
+              <div
+                className="ticket-list-item ticket-list__list__item"
+                key={v.showId}
+              >
+                <div className="ticket-list-item__schedule">
+                  <div className="ticket-list-item__schedule__left">
+                    <div className="ticket-list-item__schedule__left__name">
+                      {v.showTitle}
+                    </div>
+                    <div className="ticket-list-item__schedule__left__date">
+                      {v.startDate}
+                    </div>
+                    <div className="ticket-list-item__schedule__left__place">
+                      {v.showThreater}
+                    </div>
+                  </div>
+                  <div>
+                    <img
+                      src={v.showPic}
+                      className="ticket-list-item__schedule__right__cover"
+                    />
+                  </div>
+                </div>
+                <div className="ticket-list-item__divider"></div>
+                <div className="ticket-list-item__ticket">
+                  <div className="ticket-list-item__ticket__price">
+                    ¥ {v.showPrice}
+                  </div>
+                  <div className="ticket-list-item__ticket__divider"> | </div>
+                  <div className="ticket-list-item__ticket__count">1张</div>
+                  <div className="ticket-list-item__ticket__entry">电子票</div>
+                  <div className="ticket-list-item__status">已收货</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="load-more__tips">没有更多了</div>
+        </div>
+      </div>
+    )
+    // 空票夹
+    const emptyList = (
+      <div className="ticket-empty">
+        <img src={ticket_empty} alt="" className="ticket-empty__img" />
+        <div className="ticket-empty__tips">暂无电子票</div>
+        {this.state.isLogin ? null : (
+          <button
+            className="ju-button-Eticket"
+            onClick={() => (window.location.href = "/passport/login")}
+          >
+            登录
+          </button>
+        )}
+      </div>
+    )
     return (
       <div
         className="my-ticket-list"
@@ -18,58 +101,7 @@ export default class Eticket extends Component {
               </div>
             </div>
           </section>
-          {/* 票夹为空 */}
-          {/* <div className="ticket-empty">
-            <img src={ticket_empty} alt="" className="ticket-empty__img" />
-            <div className="ticket-empty__tips">暂无电子票</div>
-            <button
-              className="ju-button-Eticket"
-              onClick={() => (window.location.href = "/passport/login")}
-            >
-              登录
-            </button>
-          </div> */}
-          {/* 票夹有内容 */}
-          <div className="ticket-list__content">
-            <div className="load-more">
-              <div className="ticket-list__list">
-                <div className="ticket-list-item ticket-list__list__item">
-                  <div className="ticket-list-item__schedule">
-                    <div className="ticket-list-item__schedule__left">
-                      <div className="ticket-list-item__schedule__left__name">
-                        （演出变更）【小橙堡】奇幻亲子音乐剧《绿野仙踪》-石家庄
-                      </div>
-                      <div className="ticket-list-item__schedule__left__date">
-                        2020.05.16 周六 10:30
-                      </div>
-                      <div className="ticket-list-item__schedule__left__place">
-                        石家庄 | 石家庄大剧院 中剧场
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        src={ticket_empty}
-                        className="ticket-list-item__schedule__right__cover"
-                      />
-                    </div>
-                  </div>
-                  <div className="ticket-list-item__divider"></div>
-                  <div className="ticket-list-item__ticket">
-                    <div className="ticket-list-item__ticket__price">
-                      ¥ 50.00
-                    </div>
-                    <div className="ticket-list-item__ticket__divider"> | </div>
-                    <div className="ticket-list-item__ticket__count">1张</div>
-                    <div className="ticket-list-item__ticket__entry">
-                      电子票
-                    </div>
-                    <div className="ticket-list-item__status">已收货</div>
-                  </div>
-                </div>
-              </div>
-              <div className="load-more__tips">没有更多了</div>
-            </div>
-          </div>
+          {this.state.list.length > 0 ? ticketList : emptyList}
         </div>
       </div>
     )
