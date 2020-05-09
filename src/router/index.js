@@ -23,7 +23,7 @@ export default [
     component: Show,
   },
   {
-    path: "/theater/detail",
+    path: "/theatre/detail",
     component: ThreaterDetail,
   },
   {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import {withRouter} from "react-router-dom"
 import axios from "axios"
 import "../assets/style/theatre/detail.css"
-export default class ThreaterDetail extends Component {
+class ThreaterDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,13 +17,13 @@ export default class ThreaterDetail extends Component {
                     <div>
                         <div className="theater-detail__header">
                             <div className="theater-detail__header__title">
-                                <i className="iconfont ju-icon-arrow theater-detail__header__title__back"></i>
+                                <i className="iconfont ju-icon-arrow theater-detail__header__title__back icon-left" onClick={()=>window.history.go(-1)}></i>
                             </div>
                             <div className="theater-detail__header__theater">
                                 <div className="theater-detail__header__theater__detail">
                                     <div className="theater-detail__header__theater__detail__top">
                                         <div className="theater-detail__header__theater__detail__top__head">
-                                            <img src="https://image.juooo.com/group1/M00/01/D2/rAoKmVwknq2AQjJ3AABZC2s-o9o803.jpg" alt="" />
+                                            <img src={this.state.result.theatre_pic} alt="" />
                                         </div>
                                         <div className="theater-detail__header__theater__detail__top__right">
                                             <div className="theater-detail__header__theater__detail__top__right__name">
@@ -46,7 +47,7 @@ export default class ThreaterDetail extends Component {
                         <div className="theater-detail__list">
                             {
                                 this.state.result2.map(v => (
-                                    <div key={v.schedular_id} className="item" onClick={()=>{window.location.href=v.url}}>
+                                    <div key={v.schedular_id} className="item" onClick={(e)=>this.fn.call(this,e)} data-col={v.schedular_id}>
                                         <div className="ju-schedule-cell-wrapper cell__base middle">
                                             <div className="ju-schedule-cell">
                                                 <div className="ju-schedule-cell__cover">
@@ -89,24 +90,31 @@ export default class ThreaterDetail extends Component {
             </div>
         )
     }
-    // https://api.juooo.com/theatre/index/getTheatreInfo?theatre_id=2&longitude=&latitude=&version=6.1.1&referer=2
+
     async componentDidMount() {
-        const data = await axios.get("/theatre/index/getTheatreInfo?theatre_id=2&longitude=&latitude=&version=6.1.1&referer=2")
+        const theatre_id = this.props.location.pathname.split("/")[3]
+        // console.log(theatre_id)
+        const url = "/theatre/index/getTheatreInfo?theatre_id="+ theatre_id +"&longitude=&latitude=&version=6.1.1&referer=2"
+        const data = await axios.get(url)
+        console.log(data);
         const result = data.data;
         this.setState(
             {
                 result: result
             }
         )
-        // console.log(this.state.result.theatre_id);
-        // https://api.juooo.com/Show/Search/getShowList?page=1&venue_id=1078,1079,1795&version=6.1.1&referer=2
-        const data2 = await axios.get("/Show/Search/getShowList?page=1&venue_id=1078,1079,1795&version=6.1.1&referer=2")
+        const data2 = await axios.get("/Show/Search/getShowList?page=1&venue_id="+result.venue_ids+"&version=6.1.1&referer=2")
         const result2 = data2.data.list;
         this.setState(
             {
                 result2: result2
             }
         )
-        console.log(this.state.result2);
+        // console.log(this.state.result2);
     };
+
+    fn(e){
+        this.props.history.push({pathname:"/ticket/"+e.currentTarget.getAttribute('data-col')})
+    }
 }
+export default withRouter( ThreaterDetail )

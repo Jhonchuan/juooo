@@ -1,6 +1,15 @@
 import React, { Component } from "react"
-import "../../assets/style/theatre/index.css"
+import axios from "axios"
+import "../../assets/style/theatre/index1.css"
+import Swiper from "swiper"
+import "swiper/css/swiper.min.css"
 export default class TheatreList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            theatre_list: []
+        }
+    }
     render() {
         return (
             <div className="theater-wrap">
@@ -15,106 +24,51 @@ export default class TheatreList extends Component {
                             <div className="content">
                                 <div id="theaterList" className="theater-list">
                                     <ul className="theater-ul">
-                                        <li className="theater-li">
-                                            <div className="theater-info-shows">
-                                                <div className="theater-info">
-                                                    <a href="" className="theater-pic-name-count">
-                                                        <div className="theater-pic-wrap">
-                                                            <img className="theater-pic" src="https://image.juooo.com//group1/M00/01/D2/rAoKmVwknq2AQjJ3AABZC2s-o9o803.jpg" alt="" />
-                                                        </div>
-                                                        <div className="theater-name-count-wrap">
-                                                            <p className="theater-name">南山文体中心</p>
-                                                            <p className="theater-count">92场在售演出</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="" className="theater-link">
-                                                        <img src="https://m.juooo.com/static/img/more.2ce7873.png" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="theater-shows">
-                                                    <div className="theater-show-wrap">
-                                                        <div className="swiper-container swiper-container-horizontal swiper-container-android">
-                                                            <div className="swiper-wrapper">
-                                                                <div className="swiper-slide swiper-slide-activ">
-                                                                    <div className="theater-show-date">
-                                                                        <p className="show-date">05月29日</p>
-                                                                        <span className="dot"></span>
+                                        {
+                                            this.state.theatre_list.map(v => (
+                                                <React.Fragment key={v.id}>
+                                                    {v.count != 0 ? (<li className="theater-li">
+                                                        <div className="theater-info-shows">
+                                                            <div className="theater-info">
+                                                                <a href="" className="theater-pic-name-count">
+                                                                    <div className="theater-pic-wrap">
+                                                                        <img className="theater-pic" src={v.pic} alt="" />
                                                                     </div>
-                                                                    <a href="#" className="theater-show-pic">
-                                                                        <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="swiper-slide swiper-slide-next">
-                                                                    <div className="theater-show-date">
-                                                                        <p className="show-date">05月29日</p>
-                                                                        <span className="dot"></span>
+                                                                    <div className="theater-name-count-wrap">
+                                                                        <p className="theater-name">{v.name}</p>
+                                                                        <p className="theater-count">{v.count}场在售演出</p>
                                                                     </div>
-                                                                    <a href="" className="theater-show-pic">
-                                                                        <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="swiper-slide">
-                                                                    <div className="theater-show-date">
-                                                                        <p className="show-date">05月29日</p>
-                                                                        <span className="dot"></span>
+                                                                </a>
+                                                                <a href={"http://127.0.0.1:3000/theatre/detail/" + v.id} className="theater-link">
+                                                                    <img src="https://m.juooo.com/static/img/more.2ce7873.png" alt="" />
+                                                                </a>
+                                                            </div>
+                                                            <div className="theater-shows">
+                                                                <div className="theater-show-wrap">
+                                                                    <div className="swiper-container swiper-container-horizontal swiper-container-android">
+                                                                        <div className="swiper-wrapper">
+                                                                            {
+                                                                                v.showList.map(item => (
+                                                                                    <div key={item.id} className="swiper-slide">
+                                                                                        <div className="theater-show-date">
+                                                                                            <p className="show-date">{item.show_time}</p>
+                                                                                            <span className="dot"></span>
+                                                                                        </div>
+                                                                                        <a href="#" className="theater-show-pic">
+                                                                                            <img src={item.pic} alt="" />
+                                                                                        </a>
+                                                                                    </div>
+                                                                                ))
+                                                                            }
+                                                                        </div>
                                                                     </div>
-                                                                    <a href="" className="theater-show-pic">
-                                                                        <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="swiper-slide">
-                                                                    <div className="theater-show-date">
-                                                                        <p className="show-date">05月29日</p>
-                                                                        <span className="dot"></span>
-                                                                    </div>
-                                                                    <a href="" className="theater-show-pic">
-                                                                        <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="swiper-slide">
-                                                                    <div className="theater-show-date">
-                                                                        <p className="show-date">05月29日</p>
-                                                                        <span className="dot"></span>
-                                                                    </div>
-                                                                    <a href="" className="theater-show-pic">
-                                                                        <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="swiper-slide">
-                                                                    <div className="theater-show-date">
-                                                                        <p className="show-date">05月29日</p>
-                                                                        <span className="dot"></span>
-                                                                    </div>
-                                                                    <a href="" className="theater-show-pic">
-                                                                        <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="swiper-slide">
-                                                                    <div className="theater-show-date">
-                                                                        <p className="show-date">05月29日</p>
-                                                                        <span className="dot"></span>
-                                                                    </div>
-                                                                    <a href="" className="theater-show-pic">
-                                                                        <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="swiper-slide">
-                                                                    <div className="theater-show-date">
-                                                                        <p className="show-date">05月29日</p>
-                                                                        <span className="dot"></span>
-                                                                    </div>
-                                                                    <a href="" className="theater-show-pic">
-                                                                        <img src="https://image.juooo.com//group1/M00/03/3B/rAoKmV3DeSKACY6QAACUY2-qyys818.jpg" alt="" />
-                                                                    </a>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </li>
-      
+                                                    </li>) : null}
+                                                </React.Fragment>
+                                            ))
+                                        }
                                     </ul>
                                 </div>
                             </div>
@@ -124,4 +78,23 @@ export default class TheatreList extends Component {
             </div>
         )
     }
+
+    //请求 
+    async componentDidMount() {
+        console.log(Swiper);
+        new Swiper('.swiper-container', {
+            // slidesPerView: 3,
+            // spaceBetween: 30,
+            // slidesPerGroup: 3,
+        })
+        const { data } = await axios.get("/theatre/index/getTheatreList?page=1&version=6.1.1&referer=2")
+        const result = data.theatre_list.filter(item => item.showList != []);
+        // console.log(result.showList[3].showList)
+        this.setState(
+            {
+                theatre_list: result
+            }
+        )
+    }
+
 }
