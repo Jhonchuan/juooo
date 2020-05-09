@@ -2,8 +2,60 @@ const svgCaptcha = require("svg-captcha")
 const { encode, decode } = require("../module/tools")
 const fs = require("fs")
 const md5 = require("md5-node")
-const { getCode, checkCode, changedb } = require("../module/upFiles")
+const { getCode, checkCode, changedb, find } = require("../module/upFiles")
 module.exports = {
+  async login(req, res) {
+    const { userName, password } = req.query
+    find("mobile", { userName, password }, (err, result) => {
+      if (err) {
+        find("email", { userName, password }, (err, result) => {
+          if (err) {
+            res.json({ ok: -1, msg: err })
+          } else {
+            res.json({ ok: 1, msg: "登陆成功" })
+          }
+        })
+      } else {
+        res.json({ ok: 1, msg: "登陆成功" })
+      }
+    })
+  },
+  // 重设密码
+  resetPassword(req, res) {
+    const { userName } = req.query
+    find("mobile", { userName }, (err, result) => {
+      if (err) {
+        find("email", { userName }, (err, result) => {
+          if (err) {
+            res.json({ ok: -1, msg: "该用户并未注册" })
+          } else {
+            const captchaReq = md5(req.query.captcha.toLowerCase())
+            if (req.query.gid === captchaReq) {
+              res.json({
+                ok: 1,
+                msg: "图形验证通过",
+                userType: "email",
+              })
+            } else {
+              res.json({ ok: -1, msg: "验证码错误" })
+            }
+          }
+        })
+      } else {
+        const captchaReq = md5(req.query.captcha.toLowerCase())
+        if (req.query.gid === captchaReq) {
+          res.json({
+            ok: 1,
+            msg: "图形验证通过",
+            userType: "mobile",
+          })
+        } else {
+          res.json({ ok: -1, msg: "验证码错误" })
+        }
+      }
+    })
+  },
+  // 获取手机图形验证码
   getImgVertify(req, res) {
     const codeConfig = {
       size: 4, //验证码长度
@@ -20,9 +72,9 @@ module.exports = {
     const codeData = {
       img: captcha.data,
     }
+    console.log(captcha.text)
     res.json({ codeData, captchaCode })
   },
-
   //验证手机注册图形验证码
   checkImgVertify(req, res) {
     const captchaReq = md5(req.query.captcha.toLowerCase())
@@ -43,8 +95,8 @@ module.exports = {
   },
   // 验证手机验证码
   async sendPhoneCode(req, res) {
-    const { userName, type, phoneCaptcha } = req.query
-    const data = await checkCode(userName, type, phoneCaptcha)
+    const { step, userName, type, phoneCaptcha } = req.query
+    const data = await checkCode(step, userName, type, phoneCaptcha)
     if (data.ok !== -1) {
       res.json({
         ...data,

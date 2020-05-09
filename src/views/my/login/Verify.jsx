@@ -52,7 +52,10 @@ class Verify extends Component {
     }
     if (this.arr.length === 4) {
       if (this.arr.every(v => (v ? true : false))) {
+        this.hrefArr = window.location.href.split("?")[1].split("&")
+        const step = this.hrefArr[0].split("=")[1]
         const data = await this.props.sendPhoneCode(
+          step,
           this.state.type,
           this.state.userName,
           this.arr.join("")

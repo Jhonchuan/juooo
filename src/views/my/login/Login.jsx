@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
+import axios from "axios"
 import "../../../assets/style/login/index.css"
 import Dialog from "../../../components/common/Dialog"
 // 引入图片
@@ -16,6 +17,7 @@ export default class Login extends Component {
     this.state = {
       isDialog: false,
       isEyeOpen: false,
+      isConfirm: false,
     }
 
     this.password = null
@@ -38,10 +40,18 @@ export default class Login extends Component {
       button.className = "login__cnt__pwd__btn__login"
     }
   }
-  submit(e) {
+  async submit(e) {
     if (e.target.className === "login__cnt__pwd__btn__login_active") {
-      console.log(this.userName.value)
-      console.log(this.password.value)
+      const data = await axios.get("/api/login", {
+        params: {
+          userName: this.userName.value,
+          password: this.password.value,
+        },
+      })
+      if (data.ok === 1) {
+        window.location.href = localStorage.returnUrl || ""
+        document.cookie = `token=${data.token}`
+      } else this.setState({ isConfirm: true })
     }
   }
   render() {
@@ -177,6 +187,18 @@ export default class Login extends Component {
         {this.state.isDialog ? (
           <Dialog handleClick={() => this.setState({ isDialog: false })}>
             该登陆方式尚未开放，敬请期待
+          </Dialog>
+        ) : null}
+        {this.state.isConfirm ? (
+          <Dialog
+            type="confirm"
+            closeFuction={() => {
+              this.userName.value = ""
+              this.password.value = ""
+            }}
+            handleClick={() => this.setState({ isConfirm: false })}
+          >
+            用户名或密码错误
           </Dialog>
         ) : null}
       </div>

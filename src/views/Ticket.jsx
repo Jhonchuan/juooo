@@ -1,16 +1,18 @@
-import React, {Component} from "react"
-import {withRouter} from "react-router-dom"
+import React, { Component } from "react"
+import { withRouter } from "react-router-dom"
 import Home from "./Home"
 import Comm from "../components/common/CommonHeader.jsx"
 import "../assets/style/ticket/index.css"
 
 class Ticket extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            showInfo:{},
-            cityInfo:{},
-            venueInfo:{}
+            showInfo: {},
+            cityInfo: {},
+            venueInfo: {},
+            showNotice: ``,
+            showTime:{}
         }
     }
     render() {
@@ -21,7 +23,7 @@ class Ticket extends Component {
                         <div className="brief detail__brief">
                             <div className="brief__bg-wrapper">
                                 <img src={this.state.showInfo.pic}
-                                     className="brief__bg" alt=""/>
+                                    className="brief__bg" alt="" />
                             </div>
                             <div className="brief__mask"></div>
                             <div className="brief__primary">
@@ -36,7 +38,7 @@ class Ticket extends Component {
                                         <div className="image brief__primary__fg__content__cover">
                                             <img
                                                 src={this.state.showInfo.pic}
-                                                className="ju-image ju-image--fill" alt=""/>
+                                                className="ju-image ju-image--fill" alt="" />
                                         </div>
                                         <div className="brief__primary__fg__content__tag">
                                             <div className="juooo_sponsor">
@@ -102,11 +104,14 @@ class Ticket extends Component {
                                   +OPNk8HC8QD6zBLhM74VuMZxkxYZEZkgwf303VkFaur0yBWWbsZGCkcDlBYwUt59hAklk4egSj2CjwQiHHWexeOC7RB88ibNh5wYVy
                                   ntRQoWRlIMsiXIgFYiWxQhWi6ujVzezfjzDwLv3A++Gga9e4Y0mUqBLcfINqKiRO7EXhOJmB9dYltmDkRU0CeQrvJ8TbGSGPgFI+tsS6h
                                   TO4ZyYMWKsAfhqZY4KvdtpRtRFZFlUWTnGLkRXnizQdwBdL5/yC+1CKknvBpjdAAAAAElFTkSuQmCC"
-                                         className="bottom-bar__client-service__img" alt=""/>
+                                        className="bottom-bar__client-service__img" alt="" />
                                     <div className="bottom-bar__client-service__text">客服</div>
                                 </div>
                                 <div className="bottom-bar__btn-wrapper">
-                                    <div className="bottom-bar__btn">选座购买</div>
+                                    <div onClick={()=>{
+                                        this.addCart();
+                                        this.props.history.push("/eticket/list")
+                                    }} className="bottom-bar__btn">选座购买</div>
                                 </div>
                             </div>
                             <div className="center">
@@ -129,18 +134,18 @@ class Ticket extends Component {
                                                     <span className="show-benefit-item__name">优惠</span>
                                                     <span className="show-benefit-item__colon">：</span>
                                                     <span className="show-benefit-item__content">
-                                                      <div className="discount">
-                                                          <div className="show-discount-benefit-item discount__item">
-                                                              <div className="show-discount-benefit-item__content">
-                                                                  <span
-                                                                      className="show-discount-benefit-item__content__tag">折扣</span>
-                                                                  <span
-                                                                      className="show-discount-benefit-item__content__title full-display">优惠活动，指定票价8折</span>
-                                                              </div>
-                                                          </div>
+                                                        <div className="discount">
+                                                            <div className="show-discount-benefit-item discount__item">
+                                                                <div className="show-discount-benefit-item__content">
+                                                                    <span
+                                                                        className="show-discount-benefit-item__content__tag">折扣</span>
+                                                                    <span
+                                                                        className="show-discount-benefit-item__content__title full-display">优惠活动，指定票价8折</span>
+                                                                </div>
+                                                            </div>
                                                             <i className="iconfont ju-icon-ellipsis ellipsis discount__ellipsis"></i>
-                                                      </div>
-                                                  </span>
+                                                        </div>
+                                                    </span>
                                                 </div>
                                                 <div></div>
                                             </div>
@@ -149,13 +154,13 @@ class Ticket extends Component {
                                                     <span className="show-benefit-item__name">VIP+</span>
                                                     <span className="show-benefit-item__colon">：</span>
                                                     <span className="show-benefit-item__content">
-                                                      <div className="plus__desc">     V+会员享
+                                                        <div className="plus__desc">     V+会员享
                                                       <span className="plus__desc__benefit">国内免邮 + 双倍积分</span>
-                                                      <i className="iconfont ju-icon-arrow-right plus__desc__arrow">
+                                                            <i className="iconfont ju-icon-arrow-right plus__desc__arrow">
 
-                                                      </i>
-                                                      </div>
-                                                  </span>
+                                                            </i>
+                                                        </div>
+                                                    </span>
                                                 </div>
                                                 <div></div>
                                             </div>
@@ -164,8 +169,8 @@ class Ticket extends Component {
                                                     <span className="show-benefit-item__name">入场</span>
                                                     <span className="show-benefit-item__colon">：</span>
                                                     <span className="show-benefit-item__content">
-                                                  <div className="enter">1.1米以上儿童凭票进场，1.1米以下儿童谢绝入场。凭票入场，对号入座。</div>
-                                                  </span>
+                                                        <div className="enter">1.1米以上儿童凭票进场，1.1米以下儿童谢绝入场。凭票入场，对号入座。</div>
+                                                    </span>
                                                 </div>
                                                 <div></div>
                                             </div>
@@ -181,16 +186,17 @@ class Ticket extends Component {
                                             <p>
                                                 <img
                                                     src="https://image.juooo.com///group1/M00/04/3F/rAoKNV6VYRSAadaqABvTHvBoPIY662.png"
-                                                    alt=""/>
+                                                    alt="" />
                                                 <img
                                                     src="https://image.juooo.com///group1/M00/03/96/rAoKmV6VYQmAEQBnAAJuIAGGLAA192.png"
-                                                    alt=""/>
+                                                    alt="" />
                                             </p>
                                             <p>
                                                 <img
                                                     src="https://image.juooo.com///////group1/M00/04/01/rAoKNV3nGfSAKQ_fABWIFWWEJ_0607.jpg"
-                                                    alt=""/>
+                                                    alt="" />
                                             </p>
+                                            {/* <div dangerouslySetInnerHTML={{__html:this.state.showNotice}}></div> */}
                                         </div>
                                         {/*<div className="intro__mask"></div>*/}
                                         {/*<div className="intro__more"></div>*/}
@@ -229,7 +235,7 @@ class Ticket extends Component {
                                                             <div className="image ju-schedule-cell__cover__img">
                                                                 <img
                                                                     src="https://image.juooo.com/group1/M00/04/04/rAoKNV3o3tCAbCKNAAB3v6NC4vs503.jpg"
-                                                                    className="ju-image ju-image--fill" alt=""/>
+                                                                    className="ju-image ju-image--fill" alt="" />
                                                             </div>
                                                         </div>
                                                         <div className="ju-schedule-cell__info">
@@ -243,7 +249,7 @@ class Ticket extends Component {
                                                                     className="ju-schedule-cell__info__name__content ">聚橙制作|百老汇爱情音乐轻喜剧《第一次约会》中文版-深圳站
                                                                 </div>
                                                                 <div className="ju-schedule-cell__info__place">深圳 |
-                                                                    南山文体中心剧院大剧院
+                                                                南山文体中心剧院大剧院
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -265,7 +271,7 @@ class Ticket extends Component {
                                                             <div className="image ju-schedule-cell__cover__img">
                                                                 <img
                                                                     src="https://image.juooo.com/group1/M00/04/05/rAoKNV3p9MGAL4-fAABlWN_fCvM587.jpg"
-                                                                    className="ju-image ju-image--fill" alt=""/>
+                                                                    className="ju-image ju-image--fill" alt="" />
                                                             </div>
                                                         </div>
                                                         <div className="ju-schedule-cell__info">
@@ -302,7 +308,7 @@ class Ticket extends Component {
                                                             <div className="image ju-schedule-cell__cover__img">
                                                                 <img
                                                                     src="https://image.juooo.com/group1/M00/04/25/rAoKNV4O1E2AR24SAABCOpBdJGk245.jpg"
-                                                                    className="ju-image ju-image--fill" alt=""/>
+                                                                    className="ju-image ju-image--fill" alt="" />
                                                             </div>
                                                         </div>
                                                         <div className="ju-schedule-cell__info">
@@ -346,18 +352,33 @@ class Ticket extends Component {
             </div>
         )
     }
-    async componentDidMount(){
+    async addCart(){
+        await this.$axios.post("/api/addCart",{
+            showId:this.state.showInfo.schedular_id,
+            showTitle:this.state.showInfo.show_name,
+            showPic:this.state.showInfo.pic,
+            startDate:this.state.showTime.project_time,
+            startTime:this.state.showTime.session_time,
+            showCity:this.state.cityInfo.city_name,
+            showThreater:this.state.venueInfo.venue_name,
+            showPrice:this.state.showInfo.low_price
+        })
+    }
+    async componentDidMount() {
         // console.log(this.props.match.params.id)
-        const {data} = await this.$axios.get("/Schedule/Schedule/getScheduleInfo",{
-            params:{
-                schedular_id:this.props.match.params.id
+        const { data } = await this.$axios.get("/Schedule/Schedule/getScheduleInfo", {
+            params: {
+                schedular_id: this.props.match.params.id
             }
         })
         this.setState({
-            showInfo:data.static_data,
-            cityInfo:data.static_data.city,
-            venueInfo:data.static_data.venue
+            showInfo: data.static_data,
+            cityInfo: data.static_data.city,
+            venueInfo: data.static_data.venue,
+            showTime: data.item_list[0]
+            // showNotice: data.static_data.show_desc.desc
         })
+        console.log(this.state)
     }
 }
 export default withRouter(Ticket)
