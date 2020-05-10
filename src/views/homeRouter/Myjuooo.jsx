@@ -3,6 +3,13 @@ import "../../assets/style/my/my.css"
 // import ""
 
 export default class Myjuooo extends Component {
+    constructor(){
+        super()
+        this.state = {
+            isLogin:false,
+            userName:"登录/注册"
+        }
+    }
     render() {
         return (
             <div className="my-mine">
@@ -16,8 +23,8 @@ export default class Myjuooo extends Component {
                                 <div className="mine-info__main__head__pic mine-info__main__head__pic--no">
                                     <img src="https://m.juooo.com/static/img/logo-user.8413cbf.png" alt="" />
                                 </div>
-                                <span onClick={()=>{this.props.history.push("/passport/login")}} className="mine-info__main__head__name mine-info__main__head__login">登录/注册</span>
-                                <span onClick={()=>{this.props.history.push("/passport/login")}} className="mine-info__main__head__uid">请点击登录<i className="iconfont icon-left"></i></span>
+        <span onClick={()=>{if(!this.state.isLogin) this.props.history.push("/Passport/register")}} className="mine-info__main__head__name mine-info__main__head__login">{this.state.userName}</span>
+        <span onClick={()=>{if(!this.state.isLogin) this.props.history.push("/passport/login")}} className="mine-info__main__head__uid">{this.state.isLogin?"欢迎您":"请点击登录"}<i className="iconfont icon-right">></i></span>
                             </div>
                             <div className="mine-info__main__label">
                                 <p className="mine-info__main__label__name mine-info__main__label__name--no">
@@ -99,5 +106,14 @@ export default class Myjuooo extends Component {
                 </div>
             </div>
         )
+    }
+    componentDidMount(){
+        const userName = document.cookie.substring(document.cookie.indexOf("userName",0)).substring(9);
+        if(userName){
+            this.setState({
+                isLogin:true,
+                userName
+            })
+        }
     }
 }

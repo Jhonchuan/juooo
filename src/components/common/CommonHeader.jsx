@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {withRouter} from "react-router-dom"
 const secStyle = {
     height: "1.17333rem",
     width: "100%",
@@ -26,7 +27,7 @@ const iStyle = {
     "top":"50%",
     "transform":"translateY(-50%)",
 }
-export default class CommonHeader extends Component {
+class CommonHeader extends Component {
     render() {
         return (
             <div style={{
@@ -38,7 +39,9 @@ export default class CommonHeader extends Component {
             }}>
                 <section style={secStyle}>
                     <span style={spanStyle}>{this.props.title}</span>
-                    <i className="iconfont icon-left" style={iStyle}></i>
+                    <i onClick={()=>{
+                        this.props.history.go(-1)
+                    }} className="iconfont icon-left" style={iStyle}></i>
                     <div style={{
                         "position":"absolute",
                         "right":0,
@@ -62,3 +65,4 @@ export default class CommonHeader extends Component {
         )
     }
 }
+export default withRouter(CommonHeader)

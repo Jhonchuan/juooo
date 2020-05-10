@@ -27,7 +27,7 @@ class Index extends Component {
                         <strong className="address_icon"></strong>
                         <span className="address_name">深圳</span>
                     </div>
-                    <div className="header_search">
+                    <div onClick={()=>{this.props.history.push("/search/index")}} className="header_search">
                         <img className="header_search_img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAXVBMVEUAAACzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7MU5mdkAAAAHnRSTlMA+fES5d1bGgytwpCJIDy9p6Z+eWMpCKRv1sjGlU+Yw8sxAAAA/0lEQVQ4y+2TWXKDMBBENVrAYjHGGPD67n/MVEhiKiORcv7dX6Lr0UMLybz1D+2KQxAI8eT+wqbB8iPb7Da58QLgq9iFZbHf4Pb2M2dc1u3RgjzyeRa68vnoIkguc7rA/MtpwGcqDdApq4d7ui8WW2rPI9ozBTRG6wyD9g4wJqATKu0FvEl1Q7S1vqvm6N4QM2ANbQJ2GXAGXTsQMmCVfmOENt1c4aq9ExzNK6azWF1wCrkxDcS0c5+5BB4a/QNtmTu3Av1unVsDtcnpIeDP7iv/FAAo8nfBA3I71HMlgK03SXcXnupLU2ySphyWMLke2+9TKmZTrl27FhLNWy/oA9CZFFU7WU6aAAAAAElFTkSuQmCC" alt="" />
                         <span className="placeholder">搜索热门演出</span>
                     </div>
@@ -95,7 +95,7 @@ class Index extends Component {
                                             width: "20%",
                                             marginBottom: "0.29333rem"
                                         }}>
-                                            <a className="label-item__block__column" href="/#">
+                                            <a className="label-item__block__column" href={v.url.substring(19)}>
                                                 <img className="label-item__block__column__icon" src={v.pic} alt="" />
                                                 <span className="label-item__block__column__title">{v.name}</span>
                                             </a>
@@ -298,7 +298,6 @@ class Index extends Component {
                                                     style={{
                                                         opacity: 1
                                                     }} onClick={()=>{
-                                                        console.log(v)
                                                         this.props.history.push("/ticket/"+v.schedular_id)
                                                     }} className="index-show-model__item">
                                                     <div className="index-falls-cell">
